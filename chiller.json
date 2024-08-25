@@ -1,0 +1,6 @@
+{
+  "name": "e-utils",
+  "index": "docs/getting-started",
+  "pages": "./docs/**/*.mdx",
+  "theme": "red-400"
+}

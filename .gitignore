@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log*
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Build / generate output / files
+dist
+out
+*.tgz
+
+# Other directory
+.git
+.idea
+.vscode
+coverage
+.grunt
+.DS_Store
+.chiller
+.temp
+.cache
+.npm
+.yarn
+.stylelintcache
+.eslintcache
+
+
