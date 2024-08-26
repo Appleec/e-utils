@@ -17,7 +17,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "tsc --noEmit && rollup -c",
-    "release": "bumpp --commit --no-push --tag && npm publish",
+    "release": "bumpp --commit --push --tag && npm publish",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
