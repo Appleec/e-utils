@@ -1,6 +1,6 @@
 {
   "name": "@elinzy/e-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "e 工具类",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
