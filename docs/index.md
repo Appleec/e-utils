@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "e-utils"
-  text: "e 工具类，适用于 TypeScript 与 Javascript"
+  text: "e 工具类，常见 JavaScript / TypeScript 实用程序合集"
   # tagline: My great project tagline
   actions:
     - theme: brand

@@ -1,40 +1,48 @@
-# Logs
-logs
-*.log*
-npm-debug.log*
+# Git ignore
+# https://git-scm.com/docs/gitignore
+
+# Tools & Text Editors
+.idea
+.sublime-*
+.vscode
 
 # Dependency directories
 node_modules/
 
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+# Logs
+logs
+*.log*
 
-# Build / generate output / files
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Build / generate output
 dist
 out
+coverage
 *.tgz
 
-# Other directory
-.git
-.idea
-.vscode
-coverage
-.grunt
-.DS_Store
-.chiller
+# Temporary files
+.tmp
 .temp
+.grunt
+.lock-wscript
+
+# Docs config
+.chiller
+docs/.vitepress/cache
+docs/.vitepress/dist
+
+# Others
+.git
+.DS_Store
+.DS_STORE
 .cache
 .npm
 .yarn
 .stylelintcache
 .eslintcache
-
-# Docs
-docs/.vitepress/cache
-docs/.vitepress/dist
-
+package-lock.json
 

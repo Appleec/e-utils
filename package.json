@@ -1,7 +1,7 @@
 {
   "name": "@elinzy/e-utils",
   "version": "0.1.1",
-  "description": "e 工具类",
+  "description": "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
   "types": "dist/index.d.ts",

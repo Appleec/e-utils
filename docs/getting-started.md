@@ -1,20 +1,18 @@
 # 快速开始
 
----
-
 ## 概述
 
-e 工具类，适用于 TypeScript 与 Javascript
+e 工具类，常见 JavaScript / TypeScript 实用程序合集
 
 ## 安装
 
-:::code-group
+::: code-group
 
-```npm
+```sh [npm]
 npm install -D @elinzy/e-utils
 ```
 
-```yarn
+```sh [yarn]
 yarn add -D @elinzy/e-utils
 ```
 :::
@@ -23,15 +21,14 @@ yarn add -D @elinzy/e-utils
 
 :::code-group
 
-```ESM
+```js [ESM]
 import * as _ from '@elinzy/e-utils';
 
 _.isNil();
 _.isNull();
-
 ```
 
-```CommonJs
+```js [CommonJs]
 const _ = require('@elinzy/e-utils');
 
 _.isNil();

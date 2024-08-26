@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "e-utils",
-  description: "e 工具类",
+  description: "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
   // srcDir: './src',
   cleanUrls: true,
   lang: 'zh-Hans',
@@ -16,7 +16,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: '示例', link: '/markdown-examples' }
+      // { text: '示例', link: '/markdown-examples' }
     ],
 
     sidebar: [
@@ -49,6 +49,7 @@ export default defineConfig({
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },
           { text: 'isObject', link: '/isObject' },
+          { text: 'isObjectLike', link: '/isObjectLike' },
           { text: 'trim', link: '/trim' },
         ],
       },
