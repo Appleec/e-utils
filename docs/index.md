@@ -10,9 +10,9 @@ hero:
     - theme: brand
       text: 快速开始
       link: /getting-started
-    - theme: alt
-      text: 文档
-      link: /api-examples
+#    - theme: alt
+#      text: 文档
+#      link: /api-examples
 
 #features:
 #  - title: Feature A

@@ -4,46 +4,41 @@ outline: deep
 
 # Lang
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+## 版本
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+0.1.0
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+## 使用
 
-const { theme, page, frontmatter } = useData()
-</script>
+- [isNil](./isNil.md)
+- [isNull](./isNull.md)
+- [isObject](./isObject.md)
+- [isObjectLike](./isObjectLike.md)
+- [isSymbol](./isSymbol.md)
+- [isBoolean](./isBoolean.md)
+- [isUndefined](./isUndefined.md)
+- [isString](./isString.md)
+- [isNumber](./isNumber.md)
+- [isFunction](./isFunction.md)
+- [isArray](./isArray.md)
+- [isArrayLike](./isArrayLike.md)
+- [isDate](./isDate.md)
 
-## Results
+## 示例
 
-### Theme Data
-<pre>{{ theme }}</pre>
+::: code-group
 
-### Page Data
-<pre>{{ page }}</pre>
+```js [ESM]
+import * as _ from '@elinzy/e-utils/lang';
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+_.isNil();
+_.isNull();
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+```js [CommondJs]
+const lang = require('@elinzy/e-utils/lang');
 
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+_.isNil();
+_.isNull();
+```
+:::

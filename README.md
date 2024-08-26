@@ -1,10 +1,8 @@
 # e-utils
 
----
-
-[![NPM Version][https://img.shields.io/npm/v/@elinzy/e-utils.svg]][https://npmjs.org/package/@elinzy/e-utils]
-[![NPM Downloads][https://img.shields.io/npm/dm/@elinzy/e-utils.svg]][https://npmjs.org/package/@elinzy/e-utils]
-[![Node.js Version][https://img.shields.io/node/v/@elinzy/e-utils.svg]][https://nodejs.org/en/download/]
+[![NPM Version](https://img.shields.io/npm/v/@elinzy/e-utils.svg)](https://npmjs.org/package/@elinzy/e-utils)
+[![NPM Downloads](https://img.shields.io/npm/dm/@elinzy/e-utils.svg)](https://npmjs.org/package/@elinzy/e-utils)
+[![Node.js Version](https://img.shields.io/node/v/@elinzy/e-utils.svg)](https://nodejs.org/en/download/)
 
 ---
 
