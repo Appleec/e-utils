@@ -5,10 +5,12 @@
     "target": "es2020",
     "lib": ["es2020"],
     "esModuleInterop": true,
+    "strict": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noImplicitAny": false,
-    "strict": true
+    "typeRoots": ["./node_modules/@types"],
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts"

@@ -4,11 +4,11 @@ outline: deep
 
 # toUpperFirst
 
-首字母大写
+Converts the first character of `string` to upper case.
 
 ## 版本
 
-0.1.0
+0.1.2
 
 ## 使用
 
@@ -31,6 +31,9 @@ Returns the string.
 ## 示例
 
 ```js
-_.toUpperFirst('abc');
-// => Abc
+_.toUpperFirst('fred')
+// => 'Fred'
+
+_.toUpperFirst('FRED')
+// => 'FRED'
 ```

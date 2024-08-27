@@ -6,12 +6,16 @@ outline: deep
 
 ## 版本
 
-0.1.0
+0.1.2
 
 ## 使用
 
 - [trim](./trim.md)
+- [toString](./toString.md)
+- [toUpper](./toUpper.md)
 - [toUpperFirst](./toUpperFirst.md)
+- [toLower](./toLower.md)
+- [toLowerFirst](./toLowerFirst.md)
 
 ## 示例
 
