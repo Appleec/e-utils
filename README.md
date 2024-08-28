@@ -47,6 +47,6 @@ _.isNil();
 _.isNull();
 ```
 
-## 许可凭证
+## 许可证
 
 [MIT](https://github.com/Appleec/e-utils/blob/master/LICENSE)

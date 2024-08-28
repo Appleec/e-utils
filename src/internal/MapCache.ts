@@ -30,6 +30,8 @@ function isKeyable(value) {
 }
 
 class MapCache {
+  size!: number;
+  __data__!: { string: Hash; map: Map<any, any>; hash: Hash };
 
   /**
    * Creates a map cache object to store key-value pairs.
@@ -38,7 +40,7 @@ class MapCache {
    * @constructor
    * @param {Array} [entries] The key-value pairs to cache.
    */
-  constructor(entries) {
+  constructor(entries?) {
     let index = -1
     const length = entries == null ? 0 : entries.length
 

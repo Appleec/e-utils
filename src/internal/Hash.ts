@@ -2,7 +2,9 @@
 const HASH_UNDEFINED = '__hash_undefined__'
 
 class Hash {
-
+  // TS 类型检查
+  private __data__: any;
+  private size: number = 0;
   /**
    * Creates a hash object.
    *
@@ -10,7 +12,7 @@ class Hash {
    * @constructor
    * @param {Array} [entries] The key-value pairs to cache.
    */
-  constructor(entries) {
+  constructor(entries?) {
     let index = -1
     const length = entries == null ? 0 : entries.length
 

@@ -4,7 +4,7 @@
  *
  * @static
  * @memberOf _
- * @since 3.0.0
+ * @since 0.1.3
  * @category Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names.
@@ -21,7 +21,7 @@
  * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
  */
 function keysIn(object) {
-    const result = [];
+    const result: string[] = [];
     for (const key in object) {
         result.push(key);
     }

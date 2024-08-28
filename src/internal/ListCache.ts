@@ -1,6 +1,8 @@
 import assocIndexOf from './assocIndexOf'
 
 class ListCache {
+  __data__!: any[];
+  size!: number;
 
   /**
    * Creates an list cache object.
@@ -9,7 +11,7 @@ class ListCache {
    * @constructor
    * @param {Array} [entries] The key-value pairs to cache.
    */
-  constructor(entries) {
+  constructor(entries?) {
     let index = -1
     const length = entries == null ? 0 : entries.length
 
