@@ -46,6 +46,7 @@ export default defineConfig({
         text: '全局模块',
         collapsed: false,
         items: [
+          { text: 'eq', link: '/eq' },
           { text: 'isArray', link: '/isArray' },
           { text: 'isArrayLike', link: '/isArrayLike' },
           { text: 'isBoolean', link: '/isBoolean' },
