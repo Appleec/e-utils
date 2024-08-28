@@ -35,7 +35,7 @@ export default defineConfig({
           { text: 'String', link: '/string' },
       //     { text: 'Function', link: '/type-guards' },
       //     { text: 'Array', link: '/webflow' },
-      //     { text: 'Object', link: '/types' },
+          { text: 'Object', link: '/object' },
           { text: 'Lang', link: '/lang' },
       //     { text: 'Collection', link: '/helpers' },
       //     { text: 'Time', link: '/helpers' },

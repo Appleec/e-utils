@@ -17,7 +17,11 @@ export { default as isNumber } from './isNumber';
 export { default as isFunction } from './isFunction';
 export { default as isArray } from './isArray';
 export { default as isArrayLike } from './isArrayLike';
+export { default as isArrayLikeObject } from './isArrayLikeObject';
 export { default as isDate } from './isDate';
+export { default as isArguments } from './isArguments';
+export { default as isPlainObject } from './isPlainObject';
+export { default as isElement } from './isElement';
 
 // string
 export * as string from './string';
@@ -27,3 +31,6 @@ export { default as toUpper } from './toUpper';
 export { default as toUpperFirst } from './toUpperFirst';
 export { default as toLower } from './toLower';
 export { default as toLowerFirst } from './toLowerFirst';
+
+// object
+export { default as toPlainObject } from './toPlainObject';

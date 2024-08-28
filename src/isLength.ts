@@ -7,7 +7,7 @@ const MAX_SAFE_INTEGER = 9007199254740991;
  * **Note:** This method is loosely based on
  * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
  *
- * @since 4.0.0
+ * @since 0.1.3
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
