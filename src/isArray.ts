@@ -20,7 +20,7 @@ import isObjectLike from './isObjectLike';
  * // => false
  *
  */
-function isArray(value) {
+function isArray(value: any): boolean {
     return isObjectLike(value) && getTag(value) === '[object Array]';
 }
 
