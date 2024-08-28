@@ -13,37 +13,34 @@ and has a `typeof` result of "object".
 
 ## 使用
 
-### 语法
+- 语法
 
 ```js
 isObjectLike(value) -> {boolean}
 ```
 
-Checks if `value` is object-like. A value is object-like if it's not `null`, and has a `typeof` result of "object".
+- 参数
 
-### 参数
+| Name     | Type         | Description             |
+|----------|--------------|-------------------------|
+| value    | *            | The value to check.     |
 
-| Name     | Type         | Attributes    | Default | Description             |
-|----------|--------------|---------------|---------|-------------------------|
-| value    | *            |               |         | The value to check.     |
+- 返回值
 
-
-### 返回值
-
-Returns `true` if `value` is an object, else `false`.
+Returns `true` if `value` is object-like, else `false`.
 
 ## 示例
 
 ```js
-_.isObjectLike({});
+isObjectLike({})
 // => true
 
-_.isObjectLike([1, 2, 3]);
+isObjectLike([1, 2, 3])
 // => true
 
-_.isObjectLike(_.noop);
+isObjectLike(Function)
 // => false
 
-_.isObjectLike(null);
+isObjectLike(null)
 // => false
 ```

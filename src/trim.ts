@@ -12,7 +12,7 @@ import stringToArray from './internal/stringToArray';
  *
  * @since 0.1.0
  * @category String
- * @param {string} [string=''] The string to trim.
+ * @param {string} [value=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
  * @returns {string} Returns the trimmed string.
  * @see trimEnd, trimStart
@@ -24,14 +24,14 @@ import stringToArray from './internal/stringToArray';
  * trim('-_-abc-_-', '_-')
  * // => 'abc'
  */
-function trim(string: string, chars: string) {
-    if (string && chars === undefined) {
-        return string.trim();
+function trim(value: string, chars?: string): string {
+    if (value && chars === undefined) {
+        return value.trim();
     }
-    if (!string || !chars) {
-        return string || '';
+    if (!value || !chars) {
+        return value || '';
     }
-    const strSymbols = stringToArray(string);
+    const strSymbols = stringToArray(value);
     const chrSymbols = stringToArray(chars);
     const start = charsStartIndex(strSymbols, chrSymbols);
     const end = charsEndIndex(strSymbols, chrSymbols) + 1;

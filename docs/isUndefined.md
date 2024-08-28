@@ -4,6 +4,8 @@ outline: deep
 
 # isUndefined
 
+Checks if `value` is `undefined`.
+
 ## 版本
 
 0.1.1
@@ -18,20 +20,20 @@ isUndefined(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is `undefined`, else `false`.
 
 ## 示例
 
 ```js
-_.isUndefined(void 0)
+isUndefined(void 0)
 // => true
 
-_.isUndefined(null)
+isUndefined(null)
 // => false
 ```

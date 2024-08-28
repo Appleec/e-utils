@@ -4,43 +4,40 @@ outline: deep
 
 # isNil
 
+Checks if `value` is `null` or `undefined`.
+
 ## 版本
 
 0.1.0
 
 ## 使用
 
-### 语法
+- 语法
 
 ```js
 isNil(value) -> {boolean}
 ```
 
-Checks if `value` is `null` or `undefined`.
+- 参数
 
-### 参数
-
-| Name | Type     | Description     |
-|-----| -------- | -------- |
-| value    | * | The value to check. |
+| Name   | Type       | Description         |
+|--------|------------|---------------------|
+| value  | *          | The value to check. |
 
 
-### 返回值
+- 返回值
 
 Returns `true` if `value` is nullish, else `false`.
 
 ## 示例
 
 ```js
-_.isNil(null);
+isNil(null)
 // => true
 
-_.isNil(void 0);
+isNil(void 0)
 // => true
 
-_.isNil(NaN);
-// => false
-
-_.isNil('');
+isNil(NaN)
 // => false
 ```

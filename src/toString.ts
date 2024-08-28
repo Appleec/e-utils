@@ -13,16 +13,16 @@ const INFINITY = 1 / 0;
  * @returns {string} Returns the converted string.
  * @example
  *
- * _.toString(null)
+ * toString(null)
  * // => ''
  *
- * _.toString(-0)
+ * toString(-0)
  * // => '-0'
  *
- * _.toString([1, 2, 3])
+ * toString([1, 2, 3])
  * // => '1,2,3'
  */
-function toString(value) {
+function toString(value: any): string {
     if (value == null) {
         return '';
     }

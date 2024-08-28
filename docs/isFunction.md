@@ -20,32 +20,32 @@ isFunction(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is a function, else `false`.
 
 ## 示例
 
 ```js
-_.isFunction(class Any{})
+isFunction(class Any{})
 // => true
 
-_.isFunction(() => {})
+isFunction(() => {})
 // => true
 
-_.isFunction(async () => {})
+isFunction(async () => {})
 // => true
 
-_.isFunction(function * Any() {})
+isFunction(function * Any() {})
 // => true
 
-_.isFunction(Math.round)
+isFunction(Math.round)
 // => true
 
-_.isFunction(/abc/)
+isFunction(/abc/)
 // => false
 ```

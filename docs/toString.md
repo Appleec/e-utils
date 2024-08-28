@@ -4,9 +4,12 @@ outline: deep
 
 # toString
 
+Converts `value` to a string. An empty string is returned for `null`
+and `undefined` values. The sign of `-0` is preserved.
+
 ## 版本
 
-0.1.1
+0.1.2
 
 ## 使用
 
@@ -18,9 +21,9 @@ toString(value) -> {string}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to convert       |
+| Name    | Type  | Description                |
+|---------|-------|----------------------------|
+| value   | *     | The value to convert       |
 
 - 返回值
 
@@ -29,12 +32,12 @@ Returns the converted string.
 ## 示例
 
 ```js
-_.toString(null)
+toString(null)
 // => ''
 
-_.toString(-0)
+toString(-0)
 // => '-0'
 
-_.toString([1, 2, 3])
+toString([1, 2, 3])
 // => '1,2,3'
 ```

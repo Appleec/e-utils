@@ -22,10 +22,10 @@ eq(value, other) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to compare       |
-| other   | *     |         | The other value to compare |
+| Name    | Type  | Description                |
+|---------|-------|----------------------------|
+| value   | *     | The value to compare       |
+| other   | *     | The other value to compare |
 
 - 返回值
 
@@ -37,18 +37,18 @@ Returns `true` if the values are equivalent, else `false`.
 const object = { 'a': 1 }
 const other = { 'a': 1 }
 
-_.eq(object, object)
+eq(object, object)
 // => true
 
-_.eq(object, other)
+eq(object, other)
 // => false
 
-_.eq('a', 'a')
+eq('a', 'a')
 // => true
 
-_.eq('a', Object('a'))
+eq('a', Object('a'))
 // => false
 
-_.eq(NaN, NaN)
+eq(NaN, NaN)
 // => true
 ```

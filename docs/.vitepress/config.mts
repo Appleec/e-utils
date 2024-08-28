@@ -6,7 +6,10 @@ export default defineConfig({
   description: "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
   // srcDir: './src',
   cleanUrls: true,
-  lang: 'zh-Hans',
+  // lang: 'zh-Hans',
+  head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     aside: true,
     search: {

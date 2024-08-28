@@ -15,19 +15,19 @@ import isObjectLike from './isObjectLike';
  *   this.a = 1
  * }
  *
- * _.isPlainObject(new Foo)
+ * isPlainObject(new Foo)
  * // => false
  *
- * _.isPlainObject([1, 2, 3])
+ * isPlainObject([1, 2, 3])
  * // => false
  *
- * _.isPlainObject({ 'x': 0, 'y': 0 })
+ * isPlainObject({ 'x': 0, 'y': 0 })
  * // => true
  *
- * _.isPlainObject(Object.create(null))
+ * isPlainObject(Object.create(null))
  * // => true
  */
-function isPlainObject(value) {
+function isPlainObject(value: any): boolean {
     if (!isObjectLike(value) || getTag(value) !== '[object Object]') {
         return false;
     }

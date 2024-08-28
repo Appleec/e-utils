@@ -21,9 +21,9 @@ toLower(value) -> {string}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to convert       |
+| Name    | Type  | Default  | Description                |
+|---------|-------|----------|----------------------------|
+| value   | *     | ''       | The value to convert       |
 
 - 返回值
 
@@ -32,12 +32,12 @@ Returns the lower cased string.
 ## 示例
 
 ```js
-_.toLower('--Foo-Bar--');
+toLower('--Foo-Bar--');
 // => '--foo-bar--'
 
-_.toLower('fooBar');
+toLower('fooBar');
 // => 'foobar'
 
-_.toLower('__FOO_BAR__');
+toLower('__FOO_BAR__');
 // => '__foo_bar__'
 ```

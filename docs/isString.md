@@ -4,6 +4,8 @@ outline: deep
 
 # isString
 
+Checks if `value` is classified as a `String` primitive or object.
+
 ## 版本
 
 0.1.1
@@ -24,14 +26,14 @@ isString(value) -> {boolean}
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is a string, else `false`.
 
 ## 示例
 
 ```js
-_.isString('abc')
+isString('abc')
 // => true
 
-_.isString(1)
+isString(1)
 // => false
 ```

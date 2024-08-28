@@ -22,26 +22,26 @@ isArrayLike(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is array-like, else `false`.
 
 ## 示例
 
 ```js
-_.isArrayLike([1, 2, 3])
+isArrayLike([1, 2, 3])
 // => true
 
-_.isArrayLike(document.body.children)
+isArrayLike(document.body.children)
 // => true
 
-_.isArrayLike('abc')
+isArrayLike('abc')
 // => true
 
-_.isArrayLike(Function)
+isArrayLike(Function)
 // => false
 ```

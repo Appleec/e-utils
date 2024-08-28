@@ -15,7 +15,7 @@ import getTag from './internal/getTag';
  * isString(1)
  * // => false
  */
-function isString(value) {
+function isString(value: any): boolean {
     const type = typeof value;
     return (
         type === 'string' ||

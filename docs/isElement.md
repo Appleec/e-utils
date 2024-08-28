@@ -20,9 +20,9 @@ isElement(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 

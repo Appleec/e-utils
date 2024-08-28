@@ -16,7 +16,7 @@ import isObjectLike from './isObjectLike';
  * isBoolean(null)
  * // => false
  */
-function isBoolean(value) {
+function isBoolean(value: any): boolean {
     return (
         value === true ||
         value === false ||

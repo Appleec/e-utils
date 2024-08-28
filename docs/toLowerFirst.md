@@ -20,9 +20,9 @@ toLowerFirst(value) -> {string}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to convert       |
+| Name    | Type  | Default   | Description                |
+|---------|-------|-----------|----------------------------|
+| value   | *     | ''        | The value to convert       |
 
 - 返回值
 
@@ -31,9 +31,9 @@ Returns the converted string.
 ## 示例
 
 ```js
-_.toLowerFirst('Fred')
+toLowerFirst('Fred')
 // => 'fred'
 
-_.toLowerFirst('FRED')
+toLowerFirst('FRED')
 // => 'fRED'
 ```

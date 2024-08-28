@@ -4,6 +4,11 @@ outline: deep
 
 # isNumber
 
+Checks if `value` is classified as a `Number` primitive or object.
+
+**Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
+classified as numbers, use the `Number.isFinite` method.
+
 ## 版本
 
 0.1.1
@@ -18,26 +23,26 @@ isNumber(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is a number, else `false`.
 
 ## 示例
 
 ```js
-_.isNumber(3)
+isNumber(3)
 // => true
 
-_.isNumber(Number.MIN_VALUE)
+isNumber(Number.MIN_VALUE)
 // => true
 
-_.isNumber(Infinity)
+isNumber(Infinity)
 // => true
 
-_.isNumber('3')
+isNumber('3')
 // => false
 ```

@@ -21,9 +21,9 @@ toPlainObject(value) -> {Object}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to convert       |
+| Name    | Type  | Description                |
+|---------|-------|----------------------------|
+| value   | *     | The value to convert       |
 
 - 返回值
 

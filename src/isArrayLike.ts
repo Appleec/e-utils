@@ -12,19 +12,19 @@ import isFunction from './isFunction';
  * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
  * @example
  *
- * _.isArrayLike([1, 2, 3])
+ * isArrayLike([1, 2, 3])
  * // => true
  *
- * _.isArrayLike(document.body.children)
+ * isArrayLike(document.body.children)
  * // => true
  *
- * _.isArrayLike('abc')
+ * isArrayLike('abc')
  * // => true
  *
  * _.isArrayLike(Function)
  * // => false
  */
-function isArrayLike(value) {
+function isArrayLike(value: any): boolean {
     return value != null && !isFunction(value) && isLength(value.length);
 }
 

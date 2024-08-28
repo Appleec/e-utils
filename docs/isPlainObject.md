@@ -21,9 +21,9 @@ isPlainObject(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
@@ -36,15 +36,15 @@ function Foo() {
     this.a = 1
 }
 
-_.isPlainObject(new Foo)
+isPlainObject(new Foo)
 // => false
 
-_.isPlainObject([1, 2, 3])
+isPlainObject([1, 2, 3])
 // => false
 
-_.isPlainObject({ 'x': 0, 'y': 0 })
+isPlainObject({ 'x': 0, 'y': 0 })
 // => true
 
-_.isPlainObject(Object.create(null))
+isPlainObject(Object.create(null))
 // => true
 ```

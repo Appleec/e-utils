@@ -16,7 +16,7 @@ import isObjectLike from './isObjectLike';
  * _.isDate('Mon April 23 2012')
  * // => false
  */
-function isDate(value) {
+function isDate(value: any): boolean {
     return isObjectLike(value) && getTag(value) === '[object Date]' && value !== 'Invalid Date';
 }
 

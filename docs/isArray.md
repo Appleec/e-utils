@@ -20,23 +20,23 @@ isArray(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is an array, else `false`.
 
 ## 示例
 
 ```js
-_.isArray([1, 2, 3]);
+isArray([1, 2, 3]);
 // => true
 
-_.isArray(document.body.children);
+isArray(document.body.children);
 // => false
 
-_.isArray('abc');
+isArray('abc');
 // => false
 ```

@@ -6,21 +6,21 @@ import toString from './toString';
  *
  * @since 0.1.2
  * @category String
- * @param {string} [string=''] The string to convert.
+ * @param {string} [value=''] The string to convert.
  * @returns {string} Returns the lower cased string.
  * @example
  *
- * _.toLower('--Foo-Bar--');
+ * toLower('--Foo-Bar--')
  * // => '--foo-bar--'
  *
- * _.toLower('fooBar');
+ * toLower('fooBar')
  * // => 'foobar'
  *
- * _.toLower('__FOO_BAR__');
+ * toLower('__FOO_BAR__')
  * // => '__foo_bar__'
  */
-function toLower(string) {
-    return toString(string).toLowerCase();
+function toLower(value: string = ''): string {
+    return toString(value).toLowerCase();
 }
 
 export default toLower;

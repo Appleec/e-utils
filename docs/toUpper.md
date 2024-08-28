@@ -4,6 +4,9 @@ outline: deep
 
 # toUpper
 
+Converts `string`, as a whole, to upper case just like
+[String#toUpperCase](https://mdn.io/toUpperCase).
+
 ## 版本
 
 0.1.2
@@ -18,23 +21,23 @@ toUpper(value) -> {string}
 
 - 参数
 
-| Name    | Type  | Default | Description                |
-|---------|-------|---------|----------------------------|
-| value   | *     |         | The value to convert       |
+| Name    | Type   | Default   | Description                |
+|---------|--------|-----------|----------------------------|
+| value   | string | ''        | The value to convert       |
 
 - 返回值
 
-Returns the converted string.
+Returns the upper cased string.
 
 ## 示例
 
 ```js
-_.toUpper('--foo-bar--');
+toUpper('--foo-bar--')
 // => '--FOO-BAR--'
 
-_.toUpper('fooBar');
+toUpper('fooBar')
 // => 'FOOBAR'
 
-_.toUpper('__foo_bar__');
+toUpper('__foo_bar__')
 // => '__FOO_BAR__'
 ```

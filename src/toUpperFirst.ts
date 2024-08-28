@@ -10,14 +10,14 @@ import createCaseFirst from './internal/createCaseFirst';
  * @static
  * @since 0.1.2
  * @category String
- * @param {string} str The value to string.
+ * @param {string} value The value to string.
  * @returns {string} Returns the string.
  * @example
  *
- * _.toUpperFirst('fred')
+ * toUpperFirst('fred')
  * // => 'Fred'
  *
- * _.toUpperFirst('FRED')
+ * toUpperFirst('FRED')
  * // => 'FRED'
  *
  */

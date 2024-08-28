@@ -20,20 +20,20 @@ isDate(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
-Returns `true` if `value` is a boolean, else `false`.
+Returns `true` if `value` is a date object, else `false`.
 
 ## 示例
 
 ```js
-_.isDate(new Date)
+isDate(new Date)
 // => true
 
-_.isDate('Mon April 23 2012')
+isDate('Mon April 23 2012')
 // => false
 ```

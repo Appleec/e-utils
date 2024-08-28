@@ -10,13 +10,13 @@ import isObjectLike from './isObjectLike';
  * @returns {boolean} Returns `true` if `value` is an `arguments` object, else `false`.
  * @example
  *
- * _.isArguments(function() { return arguments }())
+ * isArguments(function() { return arguments }())
  * // => true
  *
- * _.isArguments([1, 2, 3])
+ * isArguments([1, 2, 3])
  * // => false
  */
-function isArguments(value) {
+function isArguments(value: any): boolean {
     return isObjectLike(value) && getTag(value) === '[object Arguments]';
 }
 

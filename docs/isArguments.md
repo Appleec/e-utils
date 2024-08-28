@@ -20,9 +20,9 @@ isArguments(value) -> {boolean}
 
 - 参数
 
-| Name    | Type  | Default | Description               |
-|---------|-------|---------|---------------------------|
-| value   | *     |         | The value to check        |
+| Name    | Type  | Description               |
+|---------|-------|---------------------------|
+| value   | *     | The value to check        |
 
 - 返回值
 
@@ -31,9 +31,9 @@ Returns `true` if `value` is an `arguments` object, else `false`.
 ## 示例
 
 ```js
-_.isArguments(function() { return arguments }())
+isArguments(function() { return arguments }())
 // => true
 
-_.isArguments([1, 2, 3])
+isArguments([1, 2, 3])
 // => false
 ```

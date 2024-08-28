@@ -18,7 +18,7 @@
  * isNull(void 0)
  * // => false
  */
-function isNull(value) {
+function isNull(value: any): boolean {
     return value === null;
 }
 
