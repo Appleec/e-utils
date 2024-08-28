@@ -47,6 +47,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'eq', link: '/eq' },
+          { text: 'isArguments', link: '/isArguments' },
           { text: 'isArray', link: '/isArray' },
           { text: 'isArrayLike', link: '/isArrayLike' },
           { text: 'isBoolean', link: '/isBoolean' },
