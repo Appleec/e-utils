@@ -4,7 +4,7 @@
  */
 
 // lang
-export * as lang from './lang';
+// export * as lang from './lang';
 export { default as isNil } from './isNil';
 export { default as isNull } from './isNull';
 export { default as isObject } from './isObject';
@@ -25,7 +25,7 @@ export { default as isElement } from './isElement';
 export { default as isBuffer } from './isBuffer';
 
 // string
-export * as string from './string';
+// export * as string from './string';
 export { default as trim } from './trim';
 export { default as toString } from './toString';
 export { default as toUpper } from './toUpper';

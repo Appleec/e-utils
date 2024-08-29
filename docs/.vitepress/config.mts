@@ -28,23 +28,24 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '快速开始', link: '/getting-started' },
+          { text: '任务列表', link: '/todo' },
         ]
       },
-      {
-        text: '分类模块',
-        collapsed: false,
-        items: [
-      //     { text: 'Number', link: '/components' },
-          { text: 'String', link: '/string' },
-      //     { text: 'Function', link: '/type-guards' },
-      //     { text: 'Array', link: '/webflow' },
-          { text: 'Object', link: '/object' },
-          { text: 'Lang', link: '/lang' },
-      //     { text: 'Collection', link: '/helpers' },
-      //     { text: 'Time', link: '/helpers' },
-      //     { text: 'Util', link: '/helpers' },
-        ],
-      },
+      // {
+      //   text: '分类模块',
+      //   collapsed: false,
+      //   items: [
+      // //     { text: 'Number', link: '/components' },
+      //     { text: 'String', link: '/string' },
+      // //     { text: 'Function', link: '/type-guards' },
+      // //     { text: 'Array', link: '/webflow' },
+      //     { text: 'Object', link: '/object' },
+      //     { text: 'Lang', link: '/lang' },
+      // //     { text: 'Collection', link: '/helpers' },
+      // //     { text: 'Time', link: '/helpers' },
+      // //     { text: 'Util', link: '/helpers' },
+      //   ],
+      // },
       {
         text: '全局模块',
         collapsed: false,
@@ -70,6 +71,7 @@ export default defineConfig({
           { text: 'isSymbol', link: '/isSymbol' },
           { text: 'isUndefined', link: '/isUndefined' },
           { text: 'kebabCase', link: '/kebabCase' },
+          { text: 'parseInt', link: '/parseInt' },
           { text: 'toLower', link: '/toLower' },
           { text: 'toLowerFirst', link: '/toLowerFirst' },
           { text: 'toNumber', link: '/toNumber' },

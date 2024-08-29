@@ -1,21 +1,36 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "target": "es2020",
-    "lib": ["dom", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],
-    "esModuleInterop": true,
-    "strict": true,
+    "outDir": "dist",               // 指定输出目录
+    "moduleResolution": "node",     // 模块解析策略，默认使用node的模块解析策略
+    "target": "es2020",             // 指定编译目标的JavaScript版本
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "es2019",
+      "es2020"
+    ],
+    "esModuleInterop": true,        // 启用ES模块互操作
+    "strict": true,                 // 启用所有严格类型检查选项
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true
+    "noImplicitAny": false,         // 禁用隐式any类型
+    "skipLibCheck": true,           // 跳过对库文件的类型检查
+    "removeComments": true,         // 删除注释
+//    "resolveJsonModule": true,      // 启用对 JSON 模块的支持
+//    "emitDecoratorMetadata": true,  // 为装饰器生成元数据
+//    "experimentalDecorators": true, // 允许使用实验性的装饰器特性
+//    "rootDir": "./src",             // 指定根目录，用于确定TypeScript输入文件的相对位置
+//    "sourceMap": true,              // 生成相应的.map文件
+//    "module": "commonjs",           // 指定生成的模块系统
   },
   "include": [
     "src/**/*.ts"
-  ],
+  ],                                // 指定要包含在编译中的文件或文件夹的模式
   "exclude": [
     "node_modules",
     "dist"
-  ]
+  ]                                 // 指定要从编译中排除的文件或文件夹的模式
 }
