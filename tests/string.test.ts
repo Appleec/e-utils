@@ -15,7 +15,7 @@ describe('string module', () => {
     })
     describe('toUpperFirst function', () => {
         test('_.toUpperFirst`', () => {
-            console.log('===>>', _.toUpperFirst('abc dsf'))
+            // console.log('===>>', _.toUpperFirst('abc dsf'))
             assert.equal(_.toUpperFirst('abc'), 'Abc');
         })
     })

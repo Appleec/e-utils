@@ -22,6 +22,7 @@ export { default as isDate } from './isDate';
 export { default as isArguments } from './isArguments';
 export { default as isPlainObject } from './isPlainObject';
 export { default as isElement } from './isElement';
+export { default as isBuffer } from './isBuffer';
 
 // string
 export * as string from './string';
@@ -31,6 +32,11 @@ export { default as toUpper } from './toUpper';
 export { default as toUpperFirst } from './toUpperFirst';
 export { default as toLower } from './toLower';
 export { default as toLowerFirst } from './toLowerFirst';
+export { default as kebabCase } from './kebabCase';
+export { default as camelCase } from './camelCase';
 
 // object
 export { default as toPlainObject } from './toPlainObject';
+
+// number
+export { default as toNumber } from './toNumber';

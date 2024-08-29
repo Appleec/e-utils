@@ -14,21 +14,23 @@ e 工具类，常见 JavaScript / TypeScript 实用程序合集
 
 ## 安装
 
-- npm
-
 ```sh
+# devDependencies
 npm install -D @elinzy/e-utils
+
+# dependencies
+npm install -S @elinzy/e-utils
 ```
 
-- yarn
+global:
 
 ```sh
-yarn add -D @elinzy/e-utils
+npm install -g @elinzy/e-utils
 ```
 
 ## 用法
 
-- ES Module
+- ESM
 
 ```js
 import * as _ from '@elinzy/e-utils';
@@ -38,7 +40,7 @@ _.isNull();
 
 ```
 
-- CommonJs
+- CJS
 
 ```js
 const _ = require('@elinzy/e-utils');

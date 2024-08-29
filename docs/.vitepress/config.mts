@@ -49,6 +49,7 @@ export default defineConfig({
         text: '全局模块',
         collapsed: false,
         items: [
+          { text: 'camelCase', link: '/camelCase' },
           { text: 'eq', link: '/eq' },
           { text: 'isArguments', link: '/isArguments' },
           { text: 'isArray', link: '/isArray' },
@@ -68,8 +69,10 @@ export default defineConfig({
           { text: 'isString', link: '/isString' },
           { text: 'isSymbol', link: '/isSymbol' },
           { text: 'isUndefined', link: '/isUndefined' },
+          { text: 'kebabCase', link: '/kebabCase' },
           { text: 'toLower', link: '/toLower' },
           { text: 'toLowerFirst', link: '/toLowerFirst' },
+          { text: 'toNumber', link: '/toNumber' },
           { text: 'toPlainObject', link: '/toPlainObject' },
           { text: 'toString', link: '/toString' },
           { text: 'toUpper', link: '/toUpper' },
