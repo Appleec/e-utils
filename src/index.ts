@@ -23,20 +23,34 @@ export { default as isArguments } from './isArguments';
 export { default as isPlainObject } from './isPlainObject';
 export { default as isElement } from './isElement';
 export { default as isBuffer } from './isBuffer';
+export { default as eq } from './eq';
+export { default as toString } from './toString';
+export { default as toPlainObject } from './toPlainObject';
+export { default as toNumber } from './toNumber';
 
 // string
 // export * as string from './string';
 export { default as trim } from './trim';
-export { default as toString } from './toString';
 export { default as toUpper } from './toUpper';
 export { default as toUpperFirst } from './toUpperFirst';
 export { default as toLower } from './toLower';
 export { default as toLowerFirst } from './toLowerFirst';
 export { default as kebabCase } from './kebabCase';
 export { default as camelCase } from './camelCase';
+export { default as parseInt } from './parseInt';
 
 // object
-export { default as toPlainObject } from './toPlainObject';
 
 // number
-export { default as toNumber } from './toNumber';
+
+// time
+export { default as timestamp } from './timestamp';
+export { default as parseTime } from './parseTime';
+export { default as currentTime } from './currentTime';
+
+// DOM
+export { default as hasClass } from './hasClass';
+
+// other
+export { default as addCommas } from './addCommas';
+export { default as convertToUnit } from './convertToUnit';

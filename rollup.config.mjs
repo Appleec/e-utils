@@ -11,6 +11,7 @@ const useThrowOnError = true // On error throw and exception
 const useSourceMap = false // Generate source map files
 const useEsbuild = true // `true` -> use esbuild, `false` use tsc
 
+// https://rollup.nodejs.cn/
 export default [
     {
         // .d.ts build

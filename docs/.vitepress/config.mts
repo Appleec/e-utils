@@ -8,14 +8,15 @@ export default defineConfig({
   cleanUrls: true,
   // lang: 'zh-Hans',
   head: [
-      ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
   ],
   themeConfig: {
     aside: true,
     search: {
       provider: 'local'
     },
-    logo: '/logo.png',
+    logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
@@ -28,7 +29,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '快速开始', link: '/getting-started' },
-          { text: '任务列表', link: '/todo' },
+          // { text: '安装', link: '/installation' },
         ]
       },
       // {
@@ -50,8 +51,13 @@ export default defineConfig({
         text: '全局模块',
         collapsed: false,
         items: [
+          { text: 'addClass', link: '/addClass' },
+          { text: 'addCommas', link: '/addCommas' },
           { text: 'camelCase', link: '/camelCase' },
+          { text: 'convertToUnit', link: '/convertToUnit' },
+          { text: 'currentTime', link: '/currentTime' },
           { text: 'eq', link: '/eq' },
+          { text: 'hasClass', link: '/hasClass' },
           { text: 'isArguments', link: '/isArguments' },
           { text: 'isArray', link: '/isArray' },
           { text: 'isArrayLike', link: '/isArrayLike' },
@@ -71,7 +77,9 @@ export default defineConfig({
           { text: 'isSymbol', link: '/isSymbol' },
           { text: 'isUndefined', link: '/isUndefined' },
           { text: 'kebabCase', link: '/kebabCase' },
+          { text: 'parseTime', link: '/parseTime' },
           { text: 'parseInt', link: '/parseInt' },
+          { text: 'timestamp', link: '/timestamp' },
           { text: 'toLower', link: '/toLower' },
           { text: 'toLowerFirst', link: '/toLowerFirst' },
           { text: 'toNumber', link: '/toNumber' },
