@@ -46,10 +46,12 @@ export { default as parseInt } from './parseInt';
 // time
 export { default as timestamp } from './timestamp';
 export { default as parseTime } from './parseTime';
+export { default as formatTime } from './formatTime';
 export { default as currentTime } from './currentTime';
 
 // DOM
 export { default as hasClass } from './hasClass';
+// export { default as downloadFile } from './downloadFile';
 
 // other
 export { default as addCommas } from './addCommas';
