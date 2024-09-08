@@ -51,7 +51,7 @@ export { default as currentTime } from './currentTime';
 
 // DOM
 export { default as hasClass } from './hasClass';
-// export { default as downloadFile } from './downloadFile';
+export { default as downloadFile } from './downloadFile';
 
 // other
 export { default as addCommas } from './addCommas';

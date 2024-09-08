@@ -43,7 +43,7 @@ function cleanEscapedString(input: string): string {
 /**
  * Format time，Upgrade from `parseTime()` method.
  *
- * eg.
+ * See.
  * [date-fns](https://github.com/date-fns/date-fns/blob/main/src/format/index.ts)
  * [moment](https://github.com/moment/moment/blob/develop/src/lib/format/format.js)
  * [dayjs](https://github.com/iamkun/dayjs/blob/dev/src/index.js)
