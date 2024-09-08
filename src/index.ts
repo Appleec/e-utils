@@ -48,6 +48,7 @@ export { default as timestamp } from './timestamp';
 export { default as parseTime } from './parseTime';
 export { default as formatTime } from './formatTime';
 export { default as currentTime } from './currentTime';
+export { default as formatTimeToHm } from './formatTimeToHm';
 
 // DOM
 export { default as hasClass } from './hasClass';

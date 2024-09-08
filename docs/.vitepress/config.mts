@@ -59,6 +59,7 @@ export default defineConfig({
           { text: 'downloadFile', link: '/downloadFile' },
           { text: 'eq', link: '/eq' },
           { text: 'formatTime', link: '/formatTime' },
+          { text: 'formatTimeToHm', link: '/formatTimeToHm' },
           { text: 'hasClass', link: '/hasClass' },
           { text: 'isArguments', link: '/isArguments' },
           { text: 'isArray', link: '/isArray' },
