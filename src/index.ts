@@ -52,6 +52,7 @@ export { default as currentTime } from './currentTime';
 export { default as formatTimeToHm } from './formatTimeToHm';
 export { default as isSameDay } from './isSameDay';
 export { default as isSameWeek } from './isSameWeek';
+export { default as isSameMonth } from './isSameMonth';
 
 // DOM
 export { default as hasClass } from './hasClass';
