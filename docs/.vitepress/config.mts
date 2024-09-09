@@ -73,6 +73,7 @@ export default defineConfig({
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },
           { text: 'isNumber', link: '/isNumber' },
+          { text: 'isNumberLike', link: '/isNumberLike' },
           { text: 'isObject', link: '/isObject' },
           { text: 'isObjectLike', link: '/isObjectLike' },
           { text: 'isPlainObject', link: '/isPlainObject' },

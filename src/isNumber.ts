@@ -32,4 +32,8 @@ function isNumber(value: any): boolean {
     );
 }
 
+// console.log('=>', isNumber(Infinity));
+// console.log('=>', isNumber(NaN));
+// console.log('=>', isNumber(null));
+
 export default isNumber;

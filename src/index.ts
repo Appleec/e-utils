@@ -27,6 +27,7 @@ export { default as eq } from './eq';
 export { default as toString } from './toString';
 export { default as toPlainObject } from './toPlainObject';
 export { default as toNumber } from './toNumber';
+export { default as isNumberLike } from './isNumberLike';
 
 // string
 // export * as string from './string';
