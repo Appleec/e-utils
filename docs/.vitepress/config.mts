@@ -87,6 +87,8 @@ export default defineConfig({
           // { text: 'parseTime', link: '/parseTime' },
           { text: 'parseInt', link: '/parseInt' },
           { text: 'timestamp', link: '/timestamp' },
+          { text: 'toFinite', link: '/toFinite' },
+          { text: 'toInteger', link: '/toInteger' },
           { text: 'toLower', link: '/toLower' },
           { text: 'toLowerFirst', link: '/toLowerFirst' },
           { text: 'toNumber', link: '/toNumber' },

@@ -28,6 +28,8 @@ export { default as toString } from './toString';
 export { default as toPlainObject } from './toPlainObject';
 export { default as toNumber } from './toNumber';
 export { default as isNumberLike } from './isNumberLike';
+export { default as toFinite } from './toFinite';
+export { default as toInteger } from './toInteger';
 
 // string
 // export * as string from './string';
