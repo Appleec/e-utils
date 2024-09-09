@@ -77,6 +77,7 @@ export default defineConfig({
           { text: 'isObject', link: '/isObject' },
           { text: 'isObjectLike', link: '/isObjectLike' },
           { text: 'isPlainObject', link: '/isPlainObject' },
+          { text: 'isSameDay', link: '/isSameDay' },
           { text: 'isString', link: '/isString' },
           { text: 'isSymbol', link: '/isSymbol' },
           { text: 'isUndefined', link: '/isUndefined' },
