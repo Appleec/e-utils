@@ -63,6 +63,7 @@ export { default as isSameMonth } from './isSameMonth';
 // DOM
 export { default as hasClass } from './hasClass';
 export { default as downloadFile } from './downloadFile';
+export { default as setStyle } from './setStyle';
 
 // other
 export { default as addCommas } from './addCommas';
