@@ -88,6 +88,7 @@ export default defineConfig({
           { text: 'kebabCase', link: '/kebabCase' },
           // { text: 'parseTime', link: '/parseTime' },
           { text: 'parseInt', link: '/parseInt' },
+          { text: 'removeClass', link: '/removeClass' },
           { text: 'setStyle', link: '/setStyle' },
           { text: 'timestamp', link: '/timestamp' },
           { text: 'toFinite', link: '/toFinite' },
