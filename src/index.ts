@@ -64,6 +64,7 @@ export { default as isSameMonth } from './isSameMonth';
 export { default as hasClass } from './hasClass';
 export { default as downloadFile } from './downloadFile';
 export { default as setStyle } from './setStyle';
+export { default as getStyle } from './getStyle';
 
 // other
 export { default as addCommas } from './addCommas';

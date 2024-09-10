@@ -60,6 +60,7 @@ export default defineConfig({
           { text: 'eq', link: '/eq' },
           { text: 'formatTime', link: '/formatTime' },
           { text: 'formatTimeToHm', link: '/formatTimeToHm' },
+          { text: 'getStyle', link: '/getStyle' },
           { text: 'hasClass', link: '/hasClass' },
           { text: 'isArguments', link: '/isArguments' },
           { text: 'isArray', link: '/isArray' },
