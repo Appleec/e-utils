@@ -3,8 +3,11 @@
  * @date 2024-08-25 14:36
  */
 
-// lang
-// export * as lang from './lang';
+/**
+ * Lang
+ *
+ * export * as lang from './lang';
+ */
 export { default as isNil } from './isNil';
 export { default as isNull } from './isNull';
 export { default as isObject } from './isObject';
@@ -30,6 +33,7 @@ export { default as toNumber } from './toNumber';
 export { default as isNumberLike } from './isNumberLike';
 export { default as toFinite } from './toFinite';
 export { default as toInteger } from './toInteger';
+export { default as isEmail } from './isEmail';
 
 // string
 // export * as string from './string';

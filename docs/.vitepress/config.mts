@@ -69,6 +69,7 @@ export default defineConfig({
           { text: 'isBuffer', link: '/isBuffer' },
           { text: 'isDate', link: '/isDate' },
           { text: 'isElement', link: '/isElement' },
+          { text: 'isEmail', link: '/isEmail' },
           { text: 'isFunction', link: '/isFunction' },
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },
