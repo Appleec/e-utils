@@ -92,6 +92,7 @@ export default defineConfig({
           { text: 'setStyle', link: '/setStyle' },
           { text: 'timestamp', link: '/timestamp' },
           { text: 'toFinite', link: '/toFinite' },
+          { text: 'toggleClass', link: '/toggleClass' },
           { text: 'toInteger', link: '/toInteger' },
           { text: 'toLower', link: '/toLower' },
           { text: 'toLowerFirst', link: '/toLowerFirst' },
