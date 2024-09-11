@@ -72,6 +72,7 @@ export { default as stopDefault } from './stopDefault';
 export { default as stopBubble } from './stopBubble';
 export { default as isScroll } from './isScroll';
 export { default as getScrollContainer } from './getScrollContainer';
+export { default as smoothScrollTo } from './smoothScrollTo';
 
 // other
 export { default as addCommas } from './addCommas';
