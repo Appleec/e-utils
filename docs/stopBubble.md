@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# stopDefault
+# stopBubble
 
-Block the browser's default behavior
+Stop the browser's bubbling behavior
 
 ## 版本
 
@@ -15,7 +15,7 @@ Block the browser's default behavior
 - 语法
 
 ```js
-stopDefault(e) -> {void}
+stopBubble(e) -> {void}
 ```
 
 - 参数
@@ -31,6 +31,6 @@ No return value.
 ## 示例
 
 ```js
-stopDefault();
+stopBubble();
 // => void
 ```

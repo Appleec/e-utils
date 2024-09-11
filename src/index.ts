@@ -69,6 +69,7 @@ export { default as addClass } from './addClass';
 export { default as removeClass } from './removeClass';
 export { default as toggleClass } from './toggleClass';
 export { default as stopDefault } from './stopDefault';
+export { default as stopBubble } from './stopBubble';
 
 // other
 export { default as addCommas } from './addCommas';

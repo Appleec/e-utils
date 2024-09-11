@@ -90,6 +90,7 @@ export default defineConfig({
           { text: 'parseInt', link: '/parseInt' },
           { text: 'removeClass', link: '/removeClass' },
           { text: 'setStyle', link: '/setStyle' },
+          { text: 'stopBubble', link: '/stopBubble' },
           { text: 'stopDefault', link: '/stopDefault' },
           { text: 'timestamp', link: '/timestamp' },
           { text: 'toFinite', link: '/toFinite' },
