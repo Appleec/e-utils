@@ -70,6 +70,8 @@ export { default as removeClass } from './removeClass';
 export { default as toggleClass } from './toggleClass';
 export { default as stopDefault } from './stopDefault';
 export { default as stopBubble } from './stopBubble';
+export { default as isScroll } from './isScroll';
+export { default as getScrollContainer } from './getScrollContainer';
 
 // other
 export { default as addCommas } from './addCommas';
