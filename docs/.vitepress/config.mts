@@ -72,6 +72,7 @@ export default defineConfig({
           { text: 'isDate', link: '/isDate' },
           { text: 'isElement', link: '/isElement' },
           { text: 'isEmail', link: '/isEmail' },
+          { text: 'isFile', link: '/isFile' },
           { text: 'isFunction', link: '/isFunction' },
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },

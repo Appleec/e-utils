@@ -35,6 +35,7 @@ export { default as toFinite } from './toFinite';
 export { default as toInteger } from './toInteger';
 export { default as isEmail } from './isEmail';
 export { default as isURL } from './isURL';
+export { default as isFile } from './isFile';
 
 // string
 // export * as string from './string';
