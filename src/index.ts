@@ -38,6 +38,7 @@ export { default as isURL } from './isURL';
 export { default as isFile } from './isFile';
 export { default as isFinite } from './isFinite';
 export { default as isBlob } from './isBlob';
+export { default as isPromise } from './isPromise';
 
 // string
 // export * as string from './string';

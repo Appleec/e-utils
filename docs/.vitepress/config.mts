@@ -83,6 +83,7 @@ export default defineConfig({
           { text: 'isObject', link: '/isObject' },
           { text: 'isObjectLike', link: '/isObjectLike' },
           { text: 'isPlainObject', link: '/isPlainObject' },
+          { text: 'isPromise', link: '/isPromise' },
           { text: 'isSameDay', link: '/isSameDay' },
           { text: 'isSameMonth', link: '/isSameMonth' },
           { text: 'isSameWeek', link: '/isSameWeek' },
