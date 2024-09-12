@@ -67,6 +67,7 @@ export default defineConfig({
           { text: 'isArray', link: '/isArray' },
           { text: 'isArrayLike', link: '/isArrayLike' },
           { text: 'isArrayLikeObject', link: '/isArrayLikeObject' },
+          { text: 'isBlob', link: '/isBlob' },
           { text: 'isBoolean', link: '/isBoolean' },
           { text: 'isBuffer', link: '/isBuffer' },
           { text: 'isDate', link: '/isDate' },
