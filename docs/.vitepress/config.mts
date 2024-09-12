@@ -73,6 +73,7 @@ export default defineConfig({
           { text: 'isElement', link: '/isElement' },
           { text: 'isEmail', link: '/isEmail' },
           { text: 'isFile', link: '/isFile' },
+          { text: 'isFinite', link: '/isFinite' },
           { text: 'isFunction', link: '/isFunction' },
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },
