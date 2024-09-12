@@ -34,6 +34,7 @@ export { default as isNumberLike } from './isNumberLike';
 export { default as toFinite } from './toFinite';
 export { default as toInteger } from './toInteger';
 export { default as isEmail } from './isEmail';
+export { default as isURL } from './isURL';
 
 // string
 // export * as string from './string';

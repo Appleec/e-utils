@@ -87,6 +87,7 @@ export default defineConfig({
           { text: 'isString', link: '/isString' },
           { text: 'isSymbol', link: '/isSymbol' },
           { text: 'isUndefined', link: '/isUndefined' },
+          { text: 'isURL', link: '/isURL' },
           { text: 'kebabCase', link: '/kebabCase' },
           { text: 'keyCodes', link: '/keyCodes' },
           // { text: 'parseTime', link: '/parseTime' },
