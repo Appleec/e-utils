@@ -83,3 +83,4 @@ export { default as smoothScrollTo } from './smoothScrollTo';
 export { default as addCommas } from './addCommas';
 export { default as convertToUnit } from './convertToUnit';
 export { default as keyCodes } from './keyCodes';
+export { default as isMobile } from './isMobile';
