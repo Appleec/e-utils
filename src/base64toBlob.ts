@@ -19,7 +19,7 @@ function base64toBlob(b64Data, contentType, sliceSize) {
   sliceSize = sliceSize || 512;
 
   const byteCharacters = atob(b64Data);
-  const byteArrays = [];
+  const byteArrays: any[] = [];
 
   for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
     const slice = byteCharacters.slice(offset, offset + sliceSize);

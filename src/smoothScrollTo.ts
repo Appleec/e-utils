@@ -56,7 +56,7 @@ function smoothScrollTo(element, target, duration) {
         return x * x * (3 - 2 * x);
     };
 
-    return new Promise(function (resolve, reject) {
+    return new Promise<void>(function (resolve, reject) {
         // This is to keep track of where the element's scrollTop is
         // supposed to be, based on what we're doing
         let previous_top = element.scrollTop;
@@ -76,7 +76,7 @@ function smoothScrollTo(element, target, duration) {
 
             // check if we're done!
             if (now >= end_time) {
-                resolve();
+                resolve(void 0);
                 return;
             }
 

@@ -32,7 +32,7 @@ function formatTimeToLast(time, option) {
     const d = new Date(time);
     const now = Date.now();
 
-    const diff = (now - d) / 1000;
+    const diff = (now - +d) / 1000;
 
     if (diff < 30) {
         return '刚刚';

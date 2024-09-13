@@ -26,4 +26,4 @@ function isFile(value) {
   return isObjectLike(value) && getTag(value) === '[object File]';
 }
 
-module.exports = isFile;
+export default isFile;
