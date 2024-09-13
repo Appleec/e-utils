@@ -62,6 +62,7 @@ export default defineConfig({
           { text: 'downloadFile', link: '/downloadFile' },
           { text: 'eq', link: '/eq' },
           { text: 'formatTime', link: '/formatTime' },
+          { text: 'formatTimeToLast', link: '/formatTimeToLast' },
           { text: 'formatTimeToHm', link: '/formatTimeToHm' },
           { text: 'getScrollContainer', link: '/getScrollContainer' },
           { text: 'getStyle', link: '/getStyle' },
