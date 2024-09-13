@@ -86,3 +86,4 @@ export { default as keyCodes } from './keyCodes';
 export { default as isMobile } from './isMobile';
 export { default as isJSONParse } from './isJSONParse';
 export { default as convertFileSizeToUnit } from './convertFileSizeToUnit';
+export { default as base64toBlob } from './base64toBlob';

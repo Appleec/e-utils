@@ -53,6 +53,7 @@ export default defineConfig({
         items: [
           { text: 'addClass', link: '/addClass' },
           { text: 'addCommas', link: '/addCommas' },
+          { text: 'base64toBlob', link: '/base64toBlob' },
           { text: 'camelCase', link: '/camelCase' },
           { text: 'convertFileSizeToUnit', link: '/convertFileSizeToUnit' },
           { text: 'convertToUnit', link: '/convertToUnit' },
