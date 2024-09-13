@@ -76,6 +76,7 @@ export default defineConfig({
           { text: 'isFile', link: '/isFile' },
           { text: 'isFinite', link: '/isFinite' },
           { text: 'isFunction', link: '/isFunction' },
+          { text: 'isJSONParse', link: '/isJSONParse' },
           { text: 'isMobile', link: '/isMobile' },
           { text: 'isNil', link: '/isNil' },
           { text: 'isNull', link: '/isNull' },
