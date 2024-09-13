@@ -73,8 +73,8 @@ function cleanEscapedString(input: string): string {
  * // => null
  *
  */
-function formatTime(value: object | string | number, format?: string): string | null {
-    if (arguments.length === 0) return null;
+function formatTime<DateType extends Date>(value: DateType | string | number, format?: string): string {
+    // if (arguments.length === 0) return null;
 
     let cFormat = format || 'YYYY-MM-DD hh:mm:ss';
     let date;
@@ -82,8 +82,8 @@ function formatTime(value: object | string | number, format?: string): string | 
     if (isObject(value)) {
         date = value;
     } else {
-        if (isString(value) && (/^[0-9]+$/.test(value))) value = parseInt(value);
-        if (isNumber(value) && (value.toString().length === 10)) value = value * 1000;
+        if (isString(value) && (/^[0-9]+$/.test(value as string))) value = parseInt(value as string);
+        if (isNumber(value) && (value.toString().length === 10)) value = +value * 1000;
         date = new Date(value);
     }
 

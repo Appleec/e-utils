@@ -2,7 +2,7 @@
  * @author appleex
  * @date 2024-09-05 23:08
  */
-import parseTime from "./parseTime";
+import parseTime from "./formatTime";
 
 /**
  * Get current time
@@ -20,7 +20,7 @@ import parseTime from "./parseTime";
  * // => 2022-04-18
  *
  */
-function currentTime(format?: string | null): string {
+function currentTime(format?: string): string {
     const date = new Date();
     return format ? parseTime(date, format) : parseTime(date, 'YYYY-MM-DD hh:mm:ss');
 }

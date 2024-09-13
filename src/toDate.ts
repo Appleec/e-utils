@@ -26,18 +26,18 @@ import isDate from "./isDate";
  */
 
 // TODO: Next plan to support special timestamp, eg: 202201011200
-function toDate<DateType extends Date>(value: DateType | number | string): DateType {
-    if (!value) return value;
+function toDate<DateType extends Date>(value: DateType | number | string):  DateType {
+    // if (!value) return value;
 
     // isDate
-    if (isDate(value)) return value;
+    if (isDate(value)) return value as DateType;
 
     // isNaN
-    if (!isNaN(+value)) return new Date(+value);
+    if (!isNaN(+value)) return new Date(+value) as DateType;
 
     value = value.toString().replace(/-/g, '/');
 
-    return new Date(value);
+    return new Date(value) as DateType;
 }
 
 // console.log('=>', toDate('2022-01-01'))
