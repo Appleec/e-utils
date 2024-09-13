@@ -85,3 +85,4 @@ export { default as convertToUnit } from './convertToUnit';
 export { default as keyCodes } from './keyCodes';
 export { default as isMobile } from './isMobile';
 export { default as isJSONParse } from './isJSONParse';
+export { default as convertFileSizeToUnit } from './convertFileSizeToUnit';

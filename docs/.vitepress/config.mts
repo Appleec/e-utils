@@ -54,6 +54,7 @@ export default defineConfig({
           { text: 'addClass', link: '/addClass' },
           { text: 'addCommas', link: '/addCommas' },
           { text: 'camelCase', link: '/camelCase' },
+          { text: 'convertFileSizeToUnit', link: '/convertFileSizeToUnit' },
           { text: 'convertToUnit', link: '/convertToUnit' },
           { text: 'currentTime', link: '/currentTime' },
           { text: 'downloadFile', link: '/downloadFile' },
