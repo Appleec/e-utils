@@ -52,3 +52,7 @@ _.isNull();
 ## 许可证
 
 [MIT](https://github.com/Appleec/e-utils/blob/master/LICENSE)
+
+## 支持
+
+如果您在使用时有任何疑问或遇到任何问题，可以通过社区讨论寻求支持。

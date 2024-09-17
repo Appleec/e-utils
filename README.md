@@ -8,11 +8,11 @@
 
 English | [简体中文](./README-zh.md)
 
-## 介绍
+## Introduction
 
 e 工具类，常见 JavaScript / TypeScript 实用程序合集
 
-## 安装
+## Installation
 
 ```sh
 # devDependencies
@@ -28,7 +28,7 @@ global:
 npm install -g @elinzy/e-utils
 ```
 
-## 用法
+## Usage
 
 - ESM
 
@@ -49,6 +49,10 @@ _.isNil();
 _.isNull();
 ```
 
-## 许可证
+## License
 
 [MIT](https://github.com/Appleec/e-utils/blob/master/LICENSE)
+
+## Support
+
+If you have any questions or encounter any problems while using tools, you can use the community discussions for support.
