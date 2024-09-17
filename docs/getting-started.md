@@ -4,6 +4,11 @@
 
 e 工具类，常见 JavaScript / TypeScript 实用程序合集
 
+主要借鉴&参考，包括第三方库：
+
+- [lodash](https://github.com/lodash/lodash)
+- [radash](https://github.com/sodiray/radash)
+
 ## 安装
 
 ::: code-group

@@ -4,7 +4,7 @@
 import getStyle from './getStyle';
 
 /**
- * Detect whether DOM element is scrolled
+ * Check if an element is scrollable
  *
  * @summary isScroll
  * @since 0.2.0
@@ -23,9 +23,10 @@ import getStyle from './getStyle';
  * isScroll(el);
  * // => true
  */
-function isScroll(el, vertical) {
+function isScroll(el: Element, vertical?: any): boolean {
     const determinedDirection = vertical !== null && vertical !== undefined;
 
+    // const { overflow } = getComputedStyle(el);
     const overflow = determinedDirection
         ? vertical
             ? getStyle(el, 'overflow-y')
