@@ -91,3 +91,4 @@ export { default as base64toBlob } from './base64toBlob';
 export { default as byteLength } from './byteLength';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
+export { default as sleep } from './sleep';

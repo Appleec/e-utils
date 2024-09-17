@@ -105,6 +105,7 @@ export default defineConfig({
           { text: 'parseInt', link: '/parseInt' },
           { text: 'removeClass', link: '/removeClass' },
           { text: 'setStyle', link: '/setStyle' },
+          { text: 'sleep', link: '/sleep' },
           { text: 'smoothScrollTo', link: '/smoothScrollTo' },
           { text: 'stopBubble', link: '/stopBubble' },
           { text: 'stopDefault', link: '/stopDefault' },
