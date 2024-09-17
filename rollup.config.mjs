@@ -72,4 +72,53 @@ export default [
                 })
         ]
     },
+    {
+        // CDN build
+        input: 'src/index.ts',
+        output: [
+            {
+                format: 'iife',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.js',
+                name: 'eUtils',
+                sourcemap: false
+            },
+            {
+                format: 'iife',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.min.js',
+                name: 'eUtils',
+                sourcemap: false,
+                plugins: [minify()]
+            },
+            {
+                format: 'es',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.esm.js',
+                sourcemap: false
+            }
+        ],
+        plugins: [
+            externals(),
+            useEsbuild
+                ? esbuild()
+                : typescript({
+                    noEmitOnError: useThrowOnError,
+                    outDir: 'cdn',
+                    removeComments: true
+                })
+        ]
+    }
 ]
