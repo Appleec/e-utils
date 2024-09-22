@@ -26,7 +26,7 @@
  * @returns {boolean} - 返回布尔类型
  * @example
  *
- * isCreditCard('352225199503011073')；
+ * isCreditCard('352225199503011073');
  * // => true
  *
  */
@@ -74,5 +74,9 @@ function isCreditCard(str) {
     }
     return true;
 }
+
+/* Tests */
+
+// console.log('=>', isCreditCard('352225199503011073'));
 
 export default isCreditCard;
