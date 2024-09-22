@@ -92,3 +92,4 @@ export { default as byteLength } from './byteLength';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
 export { default as sleep } from './sleep';
+export { default as isCreditCard } from './isCreditCard';

@@ -75,6 +75,7 @@ export default defineConfig({
           { text: 'isBlob', link: '/isBlob' },
           { text: 'isBoolean', link: '/isBoolean' },
           { text: 'isBuffer', link: '/isBuffer' },
+          { text: 'isCreditCard', link: '/isCreditCard' },
           { text: 'isDate', link: '/isDate' },
           { text: 'isElement', link: '/isElement' },
           { text: 'isEmail', link: '/isEmail' },
