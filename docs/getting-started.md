@@ -8,6 +8,7 @@ e 工具类，常见 JavaScript / TypeScript 实用程序合集
 
 - [lodash](https://github.com/lodash/lodash)
 - [radash](https://github.com/sodiray/radash)
+- https://github.com/qq575792372/i-utils
 
 ## 安装
 

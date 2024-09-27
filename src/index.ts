@@ -1,4 +1,7 @@
 /**
+ *
+ * @see https://unpkg.com/
+ *
  * @author appleex
  * @date 2024-08-25 14:36
  */
@@ -50,6 +53,7 @@ export { default as toLowerFirst } from './toLowerFirst';
 export { default as kebabCase } from './kebabCase';
 export { default as camelCase } from './camelCase';
 export { default as parseInt } from './parseInt';
+export { default as pascalCase } from './pascalCase';
 
 // object
 

@@ -104,6 +104,7 @@ export default defineConfig({
           { text: 'keyCodes', link: '/keyCodes' },
           // { text: 'parseTime', link: '/parseTime' },
           { text: 'parseInt', link: '/parseInt' },
+          { text: 'pascalCase', link: '/pascalCase' },
           { text: 'removeClass', link: '/removeClass' },
           { text: 'setStyle', link: '/setStyle' },
           { text: 'sleep', link: '/sleep' },
