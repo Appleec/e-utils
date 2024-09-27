@@ -33,7 +33,7 @@ export default [
             },
             preserveModules: usePreserveModules,
             strict: useStrict,
-            entryFileNames: '[name].cjs',
+            entryFileNames: '[name].js',
             sourcemap: useSourceMap
         },
         plugins: [
