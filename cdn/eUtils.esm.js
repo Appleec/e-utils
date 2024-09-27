@@ -457,6 +457,11 @@ function parseInt$1(string, radix = 10) {
   return nativeParseInt(`${string}`.replace(reTrimStart, ""), radix || 0);
 }
 
+function pascalCase(value) {
+  let str = camelCase(value);
+  return toUpperFirst(str);
+}
+
 function timestamp() {
   return +Date.now();
 }
@@ -949,4 +954,73 @@ function byteLength(value) {
   return s;
 }
 
-export { addClass, addCommas, base64toBlob, byteLength, camelCase, convertFileSizeToUnit, convertToUnit, currentTime, downloadFile, eq, formatTime, formatTimeToHm, formatTimeToLast, getScrollContainer, getStyle, hasClass, isArguments, isArray, isArrayLike, isArrayLikeObject, isBlob, isBoolean, isBuffer, isDate, isElement, isEmail, isFile, isFinite, isFunction, isJSONParse, isMobile, isNil, isNull, isNumber, isNumberLike, isObject, isObjectLike, isPlainObject, isPromise, isSameDay, isSameMonth, isSameWeek, isScroll, isString, isSymbol, isURL, isUndefined, kebabCase, keyCodes, parseInt$1 as parseInt, parseTime, removeClass, setStyle, smoothScrollTo, stopBubble, stopDefault, timestamp, toFinite, toInteger, toLower, toLowerFirst, toNumber, toPlainObject, toString, toUpper, toUpperFirst, toggleClass, trim };
+function debounce(fn, wait, immediate) {
+  let timer;
+  return function() {
+    let context = this, args = arguments;
+    if (!timer && immediate) {
+      timer = -1;
+      return fn.apply(context, args);
+    }
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function() {
+      fn.apply(context, args);
+    }, wait);
+  };
+}
+
+function throttle(fn, wait, immediate) {
+  let lastTime = 0;
+  return function() {
+    let timestamp = Date.now();
+    if (!lastTime && !immediate) {
+      lastTime = timestamp;
+    }
+    if (timestamp - lastTime >= wait) {
+      lastTime = timestamp;
+      return fn.apply(this, arguments);
+    }
+  };
+}
+
+function sleep(wait, callback) {
+  return new Promise((resolve) => setTimeout(async () => {
+    await callback?.();
+    resolve();
+  }, wait));
+}
+
+function isCreditCard(str) {
+  const provinces = "11|12|13|14|15|21|22|23|31|32|33|34|35|36|37|41|42|43|44|45|46|50|51|52|53|54|61|62|63|64|65|71|81|82|91";
+  let codeLen = str.length;
+  if (codeLen !== 18 && codeLen !== 15) {
+    return false;
+  }
+  if (provinces.indexOf(str.substring(0, 2)) === -1) {
+    return false;
+  }
+  let birthCode = codeLen === 18 ? str.substring(6, 14) : "19" + str.substring(6, 12);
+  let year = birthCode.substring(0, 4) - 0;
+  let month = birthCode.substring(4, 6) - 1;
+  let day = birthCode.substring(6, 8) - 0;
+  let brithday = new Date(year, month, day);
+  if (brithday.getFullYear() !== year || brithday.getMonth() !== month || brithday.getDate() !== day) {
+    return false;
+  }
+  if (codeLen === 18) {
+    const factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+    const parity = [1, 0, "X", 9, 8, 7, 6, 5, 4, 3, 2];
+    let code = str.substring(17);
+    let sum = 0;
+    for (let i = 0; i < 17; i++) {
+      sum += str[i] * factor[i];
+    }
+    if (parity[sum % 11] == code.toUpperCase()) {
+      return true;
+    }
+    return false;
+  }
+  return true;
+}
+
+export { addClass, addCommas, base64toBlob, byteLength, camelCase, convertFileSizeToUnit, convertToUnit, currentTime, debounce, downloadFile, eq, formatTime, formatTimeToHm, formatTimeToLast, getScrollContainer, getStyle, hasClass, isArguments, isArray, isArrayLike, isArrayLikeObject, isBlob, isBoolean, isBuffer, isCreditCard, isDate, isElement, isEmail, isFile, isFinite, isFunction, isJSONParse, isMobile, isNil, isNull, isNumber, isNumberLike, isObject, isObjectLike, isPlainObject, isPromise, isSameDay, isSameMonth, isSameWeek, isScroll, isString, isSymbol, isURL, isUndefined, kebabCase, keyCodes, parseInt$1 as parseInt, parseTime, pascalCase, removeClass, setStyle, sleep, smoothScrollTo, stopBubble, stopDefault, throttle, timestamp, toFinite, toInteger, toLower, toLowerFirst, toNumber, toPlainObject, toString, toUpper, toUpperFirst, toggleClass, trim };

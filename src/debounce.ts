@@ -28,7 +28,7 @@ function debounce(fn, wait, immediate) {
     let timer;
 
     return function() {
-        let context = this as any,
+        let context = this,
             args = arguments;
 
         if (!timer && immediate) {

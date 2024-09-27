@@ -21,7 +21,7 @@
  * // => 等待 200ms 后，先执行自定义函数，然后执行后续操作
  */
 
-function sleep(wait: number, callback?: () => any): Promise<unknown> {
+function sleep(wait: number, callback?: () => any): Promise<void> {
     return new Promise(resolve => setTimeout(async() => {
         await callback?.();
         resolve();
