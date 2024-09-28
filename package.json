@@ -3,7 +3,7 @@
   "moduleName": "eUtils",
   "version": "0.4.2",
   "description": "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
-  "main": "dist/index.min.js",
+  "main": "dist/eUtils.min.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
@@ -12,7 +12,9 @@
     "require": "./dist/cjs/index.cjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "dist/esm",
+    "dist/eUtils.min.js"
   ],
   "scripts": {
     "test": "jest",
@@ -41,6 +43,11 @@
   },
   "homepage": "https://github.com/Appleec/e-utils#readme",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/chai": "^4.3.17",
     "@types/jest": "^29.5.12",

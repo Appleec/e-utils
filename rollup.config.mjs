@@ -4,6 +4,10 @@ import dts from 'rollup-plugin-dts'
 import esbuild, { minify } from 'rollup-plugin-esbuild'
 import externals from 'rollup-plugin-node-externals'
 
+// babel
+import resolve from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
+
 const usePreferConst = true // Use "const" instead of "var"
 const usePreserveModules = true // `true` -> keep modules structure, `false` -> combine everything into a single file
 const useStrict = true // Use "strict"
@@ -13,8 +17,8 @@ const useEsbuild = true // `true` -> use esbuild, `false` use tsc
 
 // https://rollup.nodejs.cn/
 export default [
+    // .d.ts build
     {
-        // .d.ts build
         input: 'src/index.ts',
         output: {
             file: 'dist/index.d.ts',
@@ -22,8 +26,8 @@ export default [
         },
         plugins: [externals(), dts()]
     },
+    // CJS build
     {
-        // CJS build
         input: 'src/index.ts',
         output: {
             dir: 'dist/cjs',
@@ -47,8 +51,8 @@ export default [
                 })
         ]
     },
+    // ESM builds
     {
-        // ESM builds
         input: 'src/index.ts',
         output: {
             dir: 'dist/esm',
@@ -72,8 +76,42 @@ export default [
                 })
         ]
     },
+    // UMD builds
+    // TODO: 作为默认包入口，解决小程序加载包丢失问题
     {
-        // CDN build
+        input: 'src/index.ts',
+        output: {
+            format: 'umd',
+            generatedCode: {
+                constBindings: usePreferConst
+            },
+            preserveModules: false,
+            strict: useStrict,
+            file: 'dist/eUtils.min.js',
+            name: 'eUtils',
+            sourcemap: useSourceMap,
+            plugins: [minify()]
+        },
+        plugins: [
+            resolve(),
+            // babel
+            babel({
+                babelHelpers: "bundled",
+                exclude:"node_modules/**",
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            }),
+            externals(),
+            useEsbuild
+                ? esbuild()
+                : typescript({
+                    noEmitOnError: useThrowOnError,
+                    outDir: 'dist/esm',
+                    removeComments: true
+                })
+        ]
+    },
+    // CDN build
+    {
         input: 'src/index.ts',
         output: [
             // iife
@@ -96,20 +134,6 @@ export default [
                 preserveModules: false,
                 strict: useStrict,
                 file: 'cdn/eUtils.min.js',
-                name: 'eUtils',
-                sourcemap: false,
-                plugins: [minify()]
-            },
-            // TODO: 压缩文件格式，提供默认包入口
-            // 解决小程序加载包丢失问题
-            {
-                format: 'iife',
-                generatedCode: {
-                    constBindings: usePreferConst
-                },
-                preserveModules: false,
-                strict: useStrict,
-                file: 'dist/index.min.js',
                 name: 'eUtils',
                 sourcemap: false,
                 plugins: [minify()]
@@ -170,7 +194,7 @@ export default [
                     noEmitOnError: useThrowOnError,
                     outDir: 'cdn',
                     removeComments: true
-                })
+                }),
         ]
     }
 ]
