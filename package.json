@@ -12,9 +12,7 @@
     "require": "./dist/cjs/index.cjs"
   },
   "files": [
-    "dist",
-    "dist/esm",
-    "dist/eUtils.min.js"
+    "dist/**"
   ],
   "scripts": {
     "test": "jest",

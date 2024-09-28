@@ -1,11 +1,53 @@
-node_modules/
-.eslintrc.js
+
+## OSX
+.DS_Store
+
+## IDE
+.idea
+
+## git
+.git
+.gitignore
+
+## npm
+node_modules
+package-lock.json
+yarn.lock
 .npmignore
+
+## jest
+coverage
+jest.config.js
+
+## dev
+src
+test
+tests
+types
+build
+babel.config.js
+prettier.config.js
+.eslintrc.json
+.eslintrc.js
 .prettierignore
 .prettierrc
-package-lock.json
+.babelrc.json
 tsconfig.json
-.idea
-.git
-coverage
+
+## doc
+CONTRIBUTING.md
 docs
+
+## other
+.travis.yml
+karma.sauce.conf.js
+.github
+.releaserc
+bump.config.ts
+
+## build
+rollup.config.mjs
+cdn
+
+## test
+_test
