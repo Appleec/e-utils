@@ -1,14 +1,15 @@
 {
   "name": "@elinzy/e-utils",
+  "moduleName": "eUtils",
   "version": "0.4.1",
   "description": "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
-  "main": "dist/cjs/index.js",
+  "main": "dist/index.min.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     "types": "./dist/index.d.ts",
     "import": "./dist/esm/index.mjs",
-    "require": "./dist/cjs/index.js"
+    "require": "./dist/cjs/index.cjs"
   },
   "files": [
     "dist"

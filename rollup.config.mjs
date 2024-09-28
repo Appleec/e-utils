@@ -33,7 +33,7 @@ export default [
             },
             preserveModules: usePreserveModules,
             strict: useStrict,
-            entryFileNames: '[name].js',
+            entryFileNames: '[name].cjs',
             sourcemap: useSourceMap
         },
         plugins: [
@@ -76,6 +76,7 @@ export default [
         // CDN build
         input: 'src/index.ts',
         output: [
+            // iife
             {
                 format: 'iife',
                 generatedCode: {
@@ -99,6 +100,21 @@ export default [
                 sourcemap: false,
                 plugins: [minify()]
             },
+            // TODO: 压缩文件格式，提供默认包入口
+            // 解决小程序加载包丢失问题
+            {
+                format: 'iife',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'dist/index.min.js',
+                name: 'eUtils',
+                sourcemap: false,
+                plugins: [minify()]
+            },
+            // esm
             {
                 format: 'es',
                 generatedCode: {
@@ -108,6 +124,42 @@ export default [
                 strict: useStrict,
                 file: 'cdn/eUtils.esm.js',
                 sourcemap: false
+            },
+            {
+                format: 'es',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.esm.min.js',
+                name: 'eUtils',
+                sourcemap: false,
+                plugins: [minify()]
+            },
+            // umd
+            {
+                format: 'umd',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.umd.js',
+                name: 'eUtils',
+                sourcemap: false
+            },
+            {
+                format: 'umd',
+                generatedCode: {
+                    constBindings: usePreferConst
+                },
+                preserveModules: false,
+                strict: useStrict,
+                file: 'cdn/eUtils.umd.min.js',
+                name: 'eUtils',
+                sourcemap: false,
+                plugins: [minify()]
             }
         ],
         plugins: [
