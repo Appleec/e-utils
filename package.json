@@ -1,7 +1,7 @@
 {
   "name": "@elinzy/e-utils",
   "moduleName": "eUtils",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
   "main": "dist/index.min.js",
   "module": "dist/esm/index.mjs",
