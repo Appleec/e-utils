@@ -19,7 +19,7 @@
  * // => true
  *
  */
-function hasClass(element: HTMLElement, className: string): boolean {
+function hasClass(element, className) {
     return !!element.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
 }
 

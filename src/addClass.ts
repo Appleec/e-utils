@@ -19,7 +19,7 @@ import hasClass from "./hasClass";
  * addClass(el, 'test')
  * // => "<div class='test'></div>"
  */
-function addClass(element: HTMLElement, className: string): void {
+function addClass(element, className) {
     if (!hasClass(element, className)) {
         element.className += ' ' + className;
     }

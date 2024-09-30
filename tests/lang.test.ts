@@ -4,7 +4,6 @@
  */
 import { assert } from 'chai';
 import * as _ from '../src';
-import { JSDOM } from 'jsdom';
 
 describe('lang module', () => {
     describe('isNil function', () => {
@@ -15,9 +14,19 @@ describe('lang module', () => {
 
     describe('isElement function', () => {
         test('===>>', () => {
-            const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-            // console.log('===>>', _.isElement(dom.window.document.body))
-            assert.equal(_.isElement(dom.window.document.body), true)
+            document.body.innerHTML = `<div class="wrapper">Hello world</div>`;
+
+            const el = document.querySelector('.wrapper');
+
+            // console.log('=>', el && el.outerHTML);
+
+            if (el) {
+                // console.log('===>>', _.isElement(dom.window.document.body))
+                assert.equal(_.isElement(el), true)
+
+                // _.addClass(el, 'test');
+                // console.log('=>', el.outerHTML);
+            }
         })
     })
 })
