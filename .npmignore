@@ -5,6 +5,9 @@
 ## IDE
 .idea
 
+## vscode
+.vscode
+
 ## git
 .git
 .gitignore
@@ -25,6 +28,7 @@ test
 tests
 types
 build
+cdn
 babel.config.js
 prettier.config.js
 .eslintrc.json
@@ -33,21 +37,22 @@ prettier.config.js
 .prettierrc
 .babelrc.json
 tsconfig.json
+bump.config.ts
+rollup.config.mjs
 
 ## doc
 CONTRIBUTING.md
 docs
+
+## test
+_test
+dist
+backup
+scripts
 
 ## other
 .travis.yml
 karma.sauce.conf.js
 .github
 .releaserc
-bump.config.ts
-
-## build
-rollup.config.mjs
-cdn
-
-## test
-_test
+*.tgz

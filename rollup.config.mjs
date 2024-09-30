@@ -96,6 +96,7 @@ export default [
             resolve(),
             // babel
             babel({
+                presets: ['@babel/preset-env', "@babel/preset-typescript"],
                 babelHelpers: "bundled",
                 exclude:"node_modules/**",
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],

@@ -2,6 +2,8 @@
 # https://git-scm.com/docs/gitignore
 
 _test
+backup
+scripts
 
 # Tools & Text Editors
 .idea
