@@ -23,6 +23,7 @@ pids
 *.seed
 
 # Build / generate output
+cdn
 dist
 out
 coverage
