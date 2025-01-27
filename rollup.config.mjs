@@ -8,12 +8,12 @@ import externals from 'rollup-plugin-node-externals'
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 
-const usePreferConst = true // Use "const" instead of "var"
-const usePreserveModules = true // `true` -> keep modules structure, `false` -> combine everything into a single file
-const useStrict = true // Use "strict"
-const useThrowOnError = true // On error throw and exception
-const useSourceMap = false // Generate source map files
-const useEsbuild = true // `true` -> use esbuild, `false` use tsc
+const usePreferConst = false; // Use "const" instead of "var"
+const usePreserveModules = true; // `true` -> keep modules structure, `false` -> combine everything into a single file
+const useStrict = true; // Use "strict"
+const useThrowOnError = true; // On error throw and exception
+const useSourceMap = false; // Generate source map files
+const useEsbuild = true; // `true` -> use esbuild, `false` use tsc
 
 // https://rollup.nodejs.cn/
 export default [
@@ -37,10 +37,18 @@ export default [
             },
             preserveModules: usePreserveModules,
             strict: useStrict,
-            entryFileNames: '[name].cjs',
+            entryFileNames: '[name].js', // .cjs
             sourcemap: useSourceMap
         },
         plugins: [
+            resolve(),
+            // NOTE: Babel转义，兼容性支持
+            babel({
+                presets: ['@babel/preset-env', "@babel/preset-typescript"],
+                babelHelpers: "bundled",
+                exclude:"node_modules/**",
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            }),
             externals(),
             useEsbuild
                 ? esbuild()
@@ -62,45 +70,10 @@ export default [
             },
             preserveModules: usePreserveModules,
             strict: useStrict,
-            entryFileNames: '[name].mjs',
+            entryFileNames: '[name].js', // .mjs
             sourcemap: useSourceMap
         },
         plugins: [
-            externals(),
-            useEsbuild
-                ? esbuild()
-                : typescript({
-                    noEmitOnError: useThrowOnError,
-                    outDir: 'dist/esm',
-                    removeComments: true
-                })
-        ]
-    },
-    // UMD builds
-    // TODO: 作为默认包入口，解决小程序加载包丢失问题
-    {
-        input: 'src/index.ts',
-        output: {
-            format: 'umd',
-            generatedCode: {
-                constBindings: usePreferConst
-            },
-            preserveModules: false,
-            strict: useStrict,
-            file: 'dist/eUtils.min.js',
-            name: 'eUtils',
-            sourcemap: useSourceMap,
-            plugins: [minify()]
-        },
-        plugins: [
-            resolve(),
-            // babel
-            babel({
-                presets: ['@babel/preset-env', "@babel/preset-typescript"],
-                babelHelpers: "bundled",
-                exclude:"node_modules/**",
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            }),
             externals(),
             useEsbuild
                 ? esbuild()
@@ -188,6 +161,14 @@ export default [
             }
         ],
         plugins: [
+            resolve(),
+            // NOTE: Babel转义，兼容性支持
+            babel({
+                presets: ['@babel/preset-env', "@babel/preset-typescript"],
+                babelHelpers: "bundled",
+                exclude:"node_modules/**",
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            }),
             externals(),
             useEsbuild
                 ? esbuild()
