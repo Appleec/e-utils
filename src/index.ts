@@ -56,6 +56,9 @@ export { default as parseInt } from './parseInt';
 export { default as pascalCase } from './pascalCase';
 
 // object
+export { default as get } from './get';
+export { default as at } from './at';
+export { default as has } from './has';
 
 // number
 
