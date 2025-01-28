@@ -42,13 +42,6 @@ export default [
         },
         plugins: [
             resolve(),
-            // NOTE: Babel转义，兼容性支持
-            babel({
-                presets: ['@babel/preset-env', "@babel/preset-typescript"],
-                babelHelpers: "bundled",
-                exclude:"node_modules/**",
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            }),
             externals(),
             useEsbuild
                 ? esbuild()
@@ -56,7 +49,14 @@ export default [
                     noEmitOnError: useThrowOnError,
                     outDir: 'dist/cjs',
                     removeComments: true
-                })
+                }),
+            // NOTE: Babel转义，兼容性支持
+            babel({
+                presets: ['@babel/preset-env', "@babel/preset-typescript"],
+                babelHelpers: "bundled",
+                exclude:"node_modules/**",
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            }),
         ]
     },
     // ESM builds
