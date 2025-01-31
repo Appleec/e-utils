@@ -29,7 +29,6 @@ export { default as isArguments } from './isArguments';
 export { default as isPlainObject } from './isPlainObject';
 export { default as isElement } from './isElement';
 export { default as isBuffer } from './isBuffer';
-export { default as eq } from './eq';
 export { default as toString } from './toString';
 export { default as toPlainObject } from './toPlainObject';
 export { default as toNumber } from './toNumber';
@@ -42,6 +41,16 @@ export { default as isFile } from './isFile';
 export { default as isFinite } from './isFinite';
 export { default as isBlob } from './isBlob';
 export { default as isPromise } from './isPromise';
+export { default as isTypedArray } from './isTypedArray';
+export { default as isArrayBuffer } from './isArrayBuffer';
+export { default as isRegExp } from './isRegExp';
+export { default as eq } from './eq';
+export { default as eqDeep } from './eqDeep';
+export { default as eqDeepWith } from './eqDeepWith';
+export { default as clone } from './clone';
+export { default as cloneWith } from './cloneWith';
+export { default as cloneDeep } from './cloneDeep';
+export { default as cloneDeepWith } from './cloneDeepWith';
 
 // string
 // export * as string from './string';
@@ -54,6 +63,8 @@ export { default as kebabCase } from './kebabCase';
 export { default as camelCase } from './camelCase';
 export { default as parseInt } from './parseInt';
 export { default as pascalCase } from './pascalCase';
+export { default as trimStart } from './trimStart';
+export { default as trimEnd } from './trimEnd';
 
 // object
 export { default as get } from './get';
