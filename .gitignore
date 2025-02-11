@@ -1,7 +1,5 @@
 # Git ignore
 # https://git-scm.com/docs/gitignore
-
-_test
 backup
 scripts
 
