@@ -1,5 +1,5 @@
-import getTag from './internal/getTag.js';
-import nodeTypes from './internal/nodeTypes.js';
+import getTag from './_internal/getTag.js';
+import nodeTypes from './_internal/nodeTypes.js';
 import isObjectLike from './isObjectLike.js';
 
 /* Node.js helper references. */

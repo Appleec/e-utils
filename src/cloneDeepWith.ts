@@ -1,5 +1,5 @@
 // @ts-nocheck
-import baseClone from './internal/baseClone.js';
+import baseClone from './_internal/baseClone.js';
 
 /** Used to compose bitmasks for cloning. */
 const CLONE_DEEP_FLAG = 1;

@@ -105,7 +105,7 @@ export { default as keyCodes } from './keyCodes';
 export { default as isMobile } from './isMobile';
 export { default as isJSONParse } from './isJSONParse';
 export { default as convertFileSizeToUnit } from './convertFileSizeToUnit';
-export { default as base64toBlob } from './base64toBlob';
+export { default as base64ToBlob } from './base64ToBlob';
 export { default as byteLength } from './byteLength';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';

@@ -49,5 +49,6 @@ docs/.vitepress/dist
 .yarn
 .stylelintcache
 .eslintcache
+.changeset
 package-lock.json
 
