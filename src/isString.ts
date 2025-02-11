@@ -1,4 +1,4 @@
-import getTag from './internal/getTag';
+import getTag from './_internal/getTag';
 
 /**
  * Checks if `value` is classified as a `String` primitive or object.

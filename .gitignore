@@ -1,7 +1,5 @@
 # Git ignore
 # https://git-scm.com/docs/gitignore
-
-_test
 backup
 scripts
 
@@ -49,5 +47,6 @@ docs/.vitepress/dist
 .yarn
 .stylelintcache
 .eslintcache
+.changeset
 package-lock.json
 

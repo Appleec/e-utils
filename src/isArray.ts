@@ -1,4 +1,4 @@
-import getTag from './internal/getTag';
+import getTag from './_internal/getTag';
 import isObjectLike from './isObjectLike';
 
 /**

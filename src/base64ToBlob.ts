@@ -14,7 +14,7 @@
  * // =>
  *
  */
-function base64toBlob(b64Data, contentType, sliceSize) {
+function base64ToBlob(b64Data, contentType, sliceSize) {
   contentType = contentType || '';
   sliceSize = sliceSize || 512;
 
@@ -40,6 +40,16 @@ function base64toBlob(b64Data, contentType, sliceSize) {
   return blob;
 }
 
+// const base64ToBlob = (base64Text: string) => {
+//   const byteCharacters = atob(base64Text);
+//   const byteNumbers = new Array(byteCharacters.length);
+//   for (let i = 0; i < byteCharacters.length; i++) {
+//     byteNumbers[i] = byteCharacters.charCodeAt(i);
+//   }
+//   const byteArray = new Uint8Array(byteNumbers);
+//   return new Blob([byteArray]);
+// };
+
 // console.log('=>', base64toBlob())
 
-export default base64toBlob;
+export default base64ToBlob;

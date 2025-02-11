@@ -1,4 +1,4 @@
-import baseGet from './internal/baseGet.js';
+import baseGet from './_internal/baseGet.js';
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is
@@ -10,7 +10,6 @@ import baseGet from './internal/baseGet.js';
  * @param {Array|string} path The path of the property to get.
  * @param {*} [defaultValue] The value returned for `undefined` resolved values.
  * @returns {*} Returns the resolved value.
- * @see has, hasIn, set, unset
  * @example
  *
  * const object = { 'a': [{ 'b': { 'c': 3 } }] }
@@ -24,7 +23,7 @@ import baseGet from './internal/baseGet.js';
  * get(object, 'a.b.c', 'default')
  * // => 'default'
  */
-function get(object, path, defaultValue) {
+function get(object, path, defaultValue?) {
     const result = object == null ? undefined : baseGet(object, path);
     return result === undefined ? defaultValue : result;
 }
