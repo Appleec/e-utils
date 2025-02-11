@@ -17,9 +17,11 @@
   ],
   "scripts": {
     "test": "vitest --coverage --typecheck",
-    "type:check": "tsc --noEmit",
-    "build": "rollup -c rollup.config.mjs",
-    "release": "bumpp --commit --push --tag && npm publish",
+    "build": "tsx scripts/build-run.ts",
+    "build:rollup": "rollup -c rollup.config.mjs",
+    "build:types": "tsc --noEmit",
+    "publish:ci": "tsx scripts/publish.ts",
+    "release:ci": "tsx scripts/release.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
@@ -58,6 +60,7 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-node-externals": "^7.1.3",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.4",
     "vitepress": "^1.3.4",
     "vitest": "^3.0.5"
