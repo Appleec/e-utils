@@ -48,7 +48,7 @@ jobs:
           # cache: 'npm'
       # Install dependencies
       - name: Install dependencies（with npm）
-        run: npm ci --ignore-scripts
+        run: npm install
       # Run build
       - name: Build
         run: npm run docs:build
