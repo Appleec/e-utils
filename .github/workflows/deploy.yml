@@ -33,10 +33,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: 'master'
+          ref: 'develop'
+          # Ignore `package-lock.json` file detection.
+          lfs: false
+          persist-credentials: false
       # Set up node.js and npm
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -44,7 +47,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       # Install dependencies
-      - name: Install dependencies
+      - name: Install dependencies（with npm）
         run: npm install
       # Run build
       - name: Build
