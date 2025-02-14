@@ -116,3 +116,4 @@ export { default as throttle } from './throttle';
 export { default as sleep } from './sleep';
 export { default as isCreditCard } from './isCreditCard';
 export { default as fileTypeWith } from './fileTypeWith';
+export { default as base64ToFile } from './base64ToFile';
