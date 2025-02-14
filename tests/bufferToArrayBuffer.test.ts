@@ -19,3 +19,9 @@ function bufferToArrayBuffer(buffer: Buffer) {
   }
   return arrayBuffer;
 }
+
+describe('bufferToArrayBuffer', () => {
+  it('should do something', () => {
+
+  });
+})
