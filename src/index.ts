@@ -98,6 +98,9 @@ export { default as isScroll } from './isScroll';
 export { default as getScrollContainer } from './getScrollContainer';
 export { default as smoothScrollTo } from './smoothScrollTo';
 
+// function
+export { default as noop } from './noop';
+
 // other
 export { default as addCommas } from './addCommas';
 export { default as convertToUnit } from './convertToUnit';
@@ -106,6 +109,7 @@ export { default as isMobile } from './isMobile';
 export { default as isJSONParse } from './isJSONParse';
 export { default as convertFileSizeToUnit } from './convertFileSizeToUnit';
 export { default as base64ToBlob } from './base64ToBlob';
+export { default as fileToBase64 } from './fileToBase64';
 export { default as byteLength } from './byteLength';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
