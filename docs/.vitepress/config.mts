@@ -5,6 +5,7 @@ export default defineConfig({
   title: "e-utils",
   description: "e 工具类，常见 JavaScript / TypeScript 实用程序合集",
   // srcDir: './src',
+  base: '/e-utils/',
   cleanUrls: true,
   // lang: 'zh-Hans',
   head: [
