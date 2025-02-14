@@ -10,7 +10,7 @@ English | [简体中文](./README-zh.md)
 
 ## Introduction
 
-e 工具类，常见 JavaScript / TypeScript 实用程序合集
+e Tools, a collection of common JavaScript / TypeScript utilities
 
 ## Installation
 

@@ -16,14 +16,15 @@
     "*.d.ts"
   ],
   "scripts": {
-    "test": "vitest --coverage --typecheck",
+    "test:dev": "vitest --config vitest.config.mts",
+    "test:coverage": "vitest --coverage --typecheck",
     "build": "tsx scripts/build-run.ts",
     "build:rollup": "rollup -c rollup.config.mjs",
     "build:types": "tsc --noEmit",
     "build:clean": "tsx scripts/clean.ts",
     "build:changelog": "changeset && tsx scripts/changelog.ts",
-    "publish:ci": "tsx scripts/publish.ts",
-    "release:ci": "tsx scripts/release.ts",
+    "ci:publish": "tsx scripts/publish.ts",
+    "ci:release": "tsx scripts/release.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
