@@ -1,7 +1,8 @@
 # This is a basic workflow to help you get started with Actions
+# https://docs.github.com/zh/actions/
 
 # Sample workflow for building and deploying a site to GitHub Pages
-name: Deploy Branch to Pages
+name: Deploy VitePress to Branch
 
 # Controls when the workflow will run
 on:
@@ -21,7 +22,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: 'pages-branch'
+  group: 'pages-branch' # ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'workflow_dispatch' }} # 'pages'
   cancel-in-progress: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
