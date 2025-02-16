@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 'develop'
+          repository: Appleec/e-utils
           token: ${{ secrets.ACCESS_TOKEN }}
           # Ignore `package-lock.json` file detection.
           # lfs: false
