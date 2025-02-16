@@ -40,8 +40,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 'develop'
-          repository: 'Appleec/e-utils'
-          path: e-utils
           # Ignore `package-lock.json` file detection.
           # lfs: false
           persist-credentials: false
