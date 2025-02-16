@@ -15,11 +15,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  actions: write
-  checks: write
   contents: write
-  pages: write
-  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -57,13 +53,15 @@ jobs:
         run: npm run docs:build
       # Deploy to Branch
       - name: Deploy to Branch
-        uses: JamesIves/github-pages-deploy-action@v4 # peaceiris/actions-gh-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4 # peaceiris/actions-gh-pages@v4 crazy-max/ghaction-github-pages@v2
         with:
           branch: gh-pages
           folder: docs/.vitepress/dist
           # enable single-commit to reduce the repo size
           single-commit: true
           clean: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 #  # Deployment job
 #  deploy:
