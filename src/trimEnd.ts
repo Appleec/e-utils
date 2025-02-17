@@ -34,7 +34,7 @@ function trimEnd(string, chars) {
     return castSlice(strSymbols, 0, end).join('');
 }
 
-console.log('=>', trimEnd('  abc  '));
+// console.log('=>', trimEnd('  abc  '));
 // => '  abc'
 
 export default trimEnd;

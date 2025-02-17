@@ -9,7 +9,7 @@ import has from "./has";
  *  - field - mimeType(default), extension, tag
  *  - abbrev - false(default)
  */
-export function fileTypeWith(
+function fileTypeWith(
   value: string = '',
   options?: any,
 ) {
