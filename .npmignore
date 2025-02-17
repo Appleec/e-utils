@@ -1,58 +1,49 @@
-
-## OSX
+## Project
 .DS_Store
-
-## IDE
 .idea
-
-## vscode
 .vscode
-
-## git
 .git
-.gitignore
-
-## npm
+.github
+.changeset
 node_modules
 package-lock.json
 yarn.lock
+.npmrc
 .npmignore
-
-## jest
-coverage
-jest.config.js
-
-## dev
-src
-test
-tests
-types
-build
-cdn
-babel.config.js
-prettier.config.js
+.gitignore
+.editorconfig
 .eslintrc.json
 .eslintrc.js
-.prettierignore
 .prettierrc
+.prettierignore
+prettier.config.js
+babel.config.js
 .babelrc.json
+.travis.yml
 tsconfig.json
-bump.config.ts
+CONTRIBUTING.md
 rollup.config.mjs
 
-## doc
-CONTRIBUTING.md
+## Directory
+src
+cdn
+types
+build
 docs
-
-## test
-_test
 dist
 backup
 scripts
+package*
+
+## Tests
+test
+tests
+coverage
+jest.config.js
+vitest.config.mts
 
 ## other
-.travis.yml
+bump.config.ts
 karma.sauce.conf.js
-.github
 .releaserc
 *.tgz

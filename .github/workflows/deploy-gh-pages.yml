@@ -29,6 +29,10 @@ concurrency:
 jobs:
   # Build job
   build:
+    # let's ignore release commits, otherwise it'll try to run twice
+    if: |
+      !startsWith(github.event.head_commit.message , 'docs(release):') &&
+      !startsWith(github.event.head_commit.message , 'docs(repo):')
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job

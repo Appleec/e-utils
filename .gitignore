@@ -2,6 +2,7 @@
 # https://git-scm.com/docs/gitignore
 backup
 scripts
+package
 
 # Tools & Text Editors
 .idea
