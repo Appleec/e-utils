@@ -20,10 +20,10 @@ addClass(element: Element, className: string): void
 
 - 参数
 
-| Name      | Type       | Description    |
-|-----------|------------|----------------|
-| element   | Element    | DOM element.   |
-| className | string     | className      |
+| Name      | Type       | Required | Description    |
+|-----------|------------|----------|----------------|
+| element   | Element    | Y        | DOM element.   |
+| className | string     | Y        | className      |
 
 - 返回值
 

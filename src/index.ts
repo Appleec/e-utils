@@ -65,6 +65,8 @@ export { default as parseInt } from './parseInt';
 export { default as pascalCase } from './pascalCase';
 export { default as trimStart } from './trimStart';
 export { default as trimEnd } from './trimEnd';
+export { default as startsWith } from './startsWith';
+export { default as endsWith } from './endsWith';
 
 // object
 export { default as get } from './get';
