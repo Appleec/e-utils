@@ -14,26 +14,26 @@ Determine whether a `DOM` element has a `class` attribute.
 
 - 语法
 
-```js
-hasClass(element, className) -> {boolean}
+```
+hasClass(element: Element, className: string): boolean
 ```
 
 - 参数
 
-| Name      | Type        | Description  |
-|-----------|-------------|--------------|
-| element   | HTMLElement | DOM element. |
-| className | string      |              |
+| Name      | Type      | Required | Description  |
+|-----------|-----------|----------|--------------|
+| element   | Element   | Y        | DOM element. |
+| className | string    | Y        | className    |
 
 - 返回值
 
-True if element has class attribute, otherwise false.
+`true` if `element` is Element, `false` otherwise.
 
 ## 示例
 
 ```js
-var _wrapper = document.querySelector('.wrapper');
+var el = document.querySelector('.wrapper');
 
-hasClass(_wrapper, 'wrapper');
+hasClass(el, 'wrapper');
 // => true
 ```

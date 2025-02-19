@@ -7,19 +7,19 @@
  * Determine whether a `DOM` element has a `class` attribute.
  *
  * @since 0.2.0
- * @category Dom
- * @param {HTMLElement} element The value is HTMLElement.
+ * @category DOM
+ * @param {Element} element The value is Element.
  * @param {string} className The value is ClassName.
- * @returns {boolean} True if element has class attribute, otherwise false.
+ * @returns {boolean} `true` if `element` is Element, `false` otherwise.
  * @example
  *
- * var _wrapper = document.querySelector('.wrapper');
+ * var el = document.querySelector('.wrapper');
  *
- * hasClass(_wrapper, 'wrapper');
+ * hasClass(el, 'wrapper');
  * // => true
  *
  */
-function hasClass(element, className) {
+function hasClass(element: Element, className: string): boolean {
     return !!element.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
 }
 

@@ -15,25 +15,26 @@ outline: deep
 - 语法
 
 ```js
-addClass(element, className) -> {void}
+addClass(element: Element, className: string): void
 ```
 
 - 参数
 
-| Name      | Type        | Description  |
-|-----------|-------------|--------------|
-| element   | HTMLElement | DOM element. |
-| className | string      |              |
+| Name      | Type       | Description    |
+|-----------|------------|----------------|
+| element   | Element    | DOM element.   |
+| className | string     | className      |
 
 - 返回值
 
-No return value.
+This function does not return anything.
 
 ## 示例
 
 ```js
-var el = "<div></div>"
+// `<div class="wrapper">Hello world</div>`
+var el = document.querySelector('.wrapper');
 
-addClass(el, 'test')
-// => "<div class='test'></div>"
+addClass(el, 'container');
+// => "<div class='wrapper container'>Hello world</div>"
 ```

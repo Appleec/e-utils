@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# addClass
+# removeClass
 
-`DOM` element adds a new `class`.
+Remove a specified `class` from a `DOM` element.
 
 ## 版本
 
@@ -15,26 +15,26 @@ outline: deep
 - 语法
 
 ```js
-removeClass(el, className) -> {void}
+removeClass(el: Element, className: string): void
 ```
 
 - 参数
 
-| Name      | Type        | Description  |
-|-----------|-------------|--------------|
-| el        | HTMLElement | DOM element. |
-| className | string      |              |
+| Name      | Type    | Required | Description  |
+|-----------|---------|----------|--------------|
+| el        | Element | Y        | DOM element. |
+| className | string  | Y        |              |
 
 - 返回值
 
-No return value.
+This function does not return anything.
 
 ## 示例
 
 ```js
-// `<div class="wrapper test"></div>`
-const el = document.querySelector('div');
+// `<div class="wrapper container"></div>`
+var el = document.querySelector('.wrapper');
 
-removeClass(el, 'test');
+removeClass(el, 'container');
 // => <div class="wrapper "></div>
 ```
