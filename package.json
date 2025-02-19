@@ -1,6 +1,6 @@
 {
     "name": "@elinzy/e-utils",
-    "version": "0.4.10",
+    "version": "0.4.11",
     "description": "e Tools, a collection of common JavaScript / TypeScript utilities.",
     "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.js",
@@ -73,6 +73,7 @@
         "jsdom": "^25.0.0",
         "ofetch": "^1.4.1",
         "picocolors": "^1.1.1",
+        "prompts": "^2.4.2",
         "rollup": "^4.21.0",
         "rollup-plugin-dts": "^6.1.1",
         "rollup-plugin-esbuild": "^6.1.1",
