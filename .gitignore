@@ -1,7 +1,11 @@
 # Git ignore
 # https://git-scm.com/docs/gitignore
 backup
-scripts
+scripts/*
+!scripts/push-gh-pages.ts
+!scripts/release.ts
+!scripts/build.ts
+!scripts/publish.ts
 package
 
 # Tools & Text Editors
@@ -48,6 +52,7 @@ docs/.vitepress/dist
 .yarn
 .stylelintcache
 .eslintcache
-.changeset
 package-lock.json
+.changeset
+.env
 
