@@ -16,6 +16,7 @@ hero:
 
 features:
   - title: Lang
+    link: /lang
     details: 任意方法集合.
   - title: Number
     details: 数字方法集合.
@@ -31,7 +32,7 @@ features:
     details: DOM方法集合.
   - title: Time
     details: 时间方法集合.
-  - title: Other
+  - title: Util
     details: 其它（包括第三方）方法集合.
 ---
 

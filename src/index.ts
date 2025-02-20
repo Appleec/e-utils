@@ -100,7 +100,16 @@ export { default as isScroll } from './isScroll';
 export { default as getScrollContainer } from './getScrollContainer';
 export { default as smoothScrollTo } from './smoothScrollTo';
 
-// function
+// Math
+export { default as add } from './add';
+export { default as subtract } from './subtract';
+export { default as multiply } from './multiply';
+export { default as divide } from './divide';
+export { default as round } from './round';
+export { default as ceil } from './ceil';
+export { default as floor } from './floor';
+
+// Util
 export { default as noop } from './noop';
 
 // other
