@@ -16,8 +16,8 @@ const GITHUB_TOKEN = process.env['GITHUB_TOKEN'];
 // Main entry
 async function main() {
   // Build the package
-  console.log(`\n# Run build docs`);
-  console.log(`${pc.green(`> npm run docs:build`)}`)
+  console.log(pc.cyan(`\n# Build the package...`));
+  console.log(pc.green(`> npm run docs:build`));
   execSync('npm run docs:build', { stdio: 'inherit' });
 
   // Check the dist dir
@@ -35,23 +35,23 @@ async function main() {
   );
 
   // Ready to pushing
-  console.log('\n# Ready to pushing',);
+  console.log(pc.cyan(`\n# Ready to pushing`));
 
   // Enter `dist` dir for root
-  console.log(`${pc.green(`> cd ${DIR_DOCS_DIST}`)}`);
+  console.log(pc.green(`> cd ${DIR_DOCS_DIST}`));
   process.chdir(DIR_DOCS_DIST);
 
   // Commit changes to the Git
-  console.log(`${pc.green(`> git init`)}`);
+  console.log(pc.green(`> git init`));
   execSync('git init', { stdio: 'inherit' });
-  console.log(`${pc.green(`> git add -A`)}`);
+  console.log(pc.green(`> git add -A`));
   execSync('git add -A', { stdio: 'inherit' });
-  console.log(`${pc.green(`> git commit -m [messages]`)}`);
+  console.log(pc.green(`> git commit -m [messages]`));
   execSync('git commit -m "docs: release"', { stdio: 'inherit' });
 
   // Push to GitHub
-  console.log('\n# Pushing to GitHub',);
-  console.log(`${pc.green(`> git push -f [repo] [branch]`)}`);
+  console.log(pc.cyan(`\n# Pushing to GitHub`));
+  console.log(pc.green(`> git push -f [repo] [branch]`));
   // Default branch is `main` or `master`, repo https://[username]:[token]@github.com/[username]/[repo_name].git
   execSync(`git push -f https://Appleec:${GITHUB_TOKEN}@github.com/Appleec/e-utils.git main:gh-pages`, { stdio: 'inherit' });
 }

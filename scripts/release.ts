@@ -50,7 +50,7 @@ async function main() {
   const { index } = await prompts({
     type: 'select',
     name: 'index',
-    message: 'Select branch',
+    message: 'Select branch to merge',
     choices: brs
   })
 

@@ -15,17 +15,17 @@ const DIR_DIST = resolve(DIR_ROOT, 'dist');
  */
 async function main() {
   // Check before build
-  console.log(`\n# Check before build`);
-  console.log(`${pc.green(`> npm run build:types`)}`);
+  console.log(pc.cyan(`\n# Check before build`));
+  console.log(pc.green(`> npm run build:types`));
   execSync('npm run build:types', { stdio: 'inherit' });
 
   // Build the package
-  console.log(`\n# Build the package`);
-  console.log(`${pc.green(`> npm run build`)}`);
+  console.log(pc.cyan(`\n# Build the package`));
+  console.log(pc.green(`> npm run build`));
   execSync('npm run build', { stdio: 'inherit' });
 
   // Generate the `package.json`, `LICENSE`, `README.md`, `README-zh.md`
-  console.log(`\n# Generate the files`);
+  console.log(pc.cyan(`\n# Generate the files`));
   await genAssets();
 
   console.log(pc.cyan('info'), `Output files
@@ -37,20 +37,19 @@ async function main() {
   );
 
   // Ready to publish
-  console.log('\n# Ready to publish');
-
+  console.log(pc.cyan(`\n# Ready to publish`));
   // Enter `dist` dir for root
-  console.log(`${pc.green(`> cd ${DIR_DIST}`)}`);
+  console.log(pc.green(`> cd ${DIR_DIST}`));
   process.chdir(DIR_DIST);
 
   // Publishing the package
-  console.log('\n# Publishing the package',);
+  console.log(pc.cyan(`\n# Publishing the package`));
   let command = `npm publish -r --access public --registry https://registry.npmjs.org/ --no-git-checks`;
 
   if (version.includes('beta'))
     command += ' --tag beta'
 
-  console.log(`${pc.green(`> ${command}`)}`);
+  console.log(pc.green(`> ${command}`));
   execSync(command, { stdio: 'inherit' });
 }
 
