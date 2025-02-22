@@ -111,6 +111,7 @@ export { default as floor } from './floor';
 
 // Util
 export { default as noop } from './noop';
+export { default as byteSize } from './byteSize';
 
 // other
 export { default as addCommas } from './addCommas';
@@ -118,7 +119,6 @@ export { default as convertToUnit } from './convertToUnit';
 export { default as keyCodes } from './keyCodes';
 export { default as isMobile } from './isMobile';
 export { default as isJSONParse } from './isJSONParse';
-export { default as convertFileSizeToUnit } from './convertFileSizeToUnit';
 export { default as base64ToBlob } from './base64ToBlob';
 export { default as fileToBase64 } from './fileToBase64';
 export { default as byteLength } from './byteLength';
