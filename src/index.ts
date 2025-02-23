@@ -111,10 +111,10 @@ export { default as floor } from './floor';
 
 // Util
 export { default as noop } from './noop';
+export { default as addCommas } from './addCommas';
 export { default as byteSize } from './byteSize';
 
 // other
-export { default as addCommas } from './addCommas';
 export { default as convertToUnit } from './convertToUnit';
 export { default as keyCodes } from './keyCodes';
 export { default as isMobile } from './isMobile';

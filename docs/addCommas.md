@@ -15,14 +15,14 @@ Add comma separator.
 - 语法
 
 ```js
-addCommas(value) -> {string}
+addCommas(value: number | string): string
 ```
 
 - 参数
 
-| Name      | Type          | Description   |
-|-----------|---------------|---------------|
-| value     | number/string |               |
+| Name      | Type           | Description  |
+|-----------|----------------|--------------|
+| value     | number, string |              |
 
 - 返回值
 
@@ -37,8 +37,8 @@ addCommas(20000)
 addCommas('20000')
 // => 20,000
 
-addCommas('120%')
-// => 120%
+addCommas('20000%')
+// => 20,000%
 
 addCommas(20000.0015)
 // => 20,000.0015
