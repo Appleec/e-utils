@@ -20,6 +20,19 @@ const defaultOptions = {
  * https://github.com/75lb/byte-size/blob/master/index.js
  * https://github.com/avoidwork/filesize.js/blob/master/src/filesize.js
  *
+ *
+ *  SI NAME   | SYMB | DEC   | BIN  | IEC NAME | SYMB  | BIN
+ *  ----------+------+-------+------+----------+-------+-----
+ *  kilobyte  | (kB) | 10^3  | 2^10 | kibibyte | (KiB) | 2^10
+ *  megabyte  | (MB) | 10^6  | 2^20 | mebibyte | (MiB) | 2^20
+ *  gigabyte  | (GB) | 10^9  | 2^30 | gibibyte | (GiB) | 2^30
+ *  terabyte  | (TB) | 10^12 | 2^40 | tebibyte | (TiB) | 2^40
+ *  petabyte  | (PB) | 10^15 | 2^50 | pebibyte | (PiB) | 2^50
+ *  exabyte   | (EB) | 10^18 | 2^60 | exbibyte | (EiB) | 2^60
+ *  zettabyte | (ZB) | 10^21 | 2^70 | zebibyte | (ZiB) | 2^70
+ *  yottabyte | (YB) | 10^24 | 2^80 | yobibyte | (YiB) | 2^80
+ *
+ *
  * @since 0.4.11
  * @category Util
  * @param {number} bytes The value to process.
