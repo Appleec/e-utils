@@ -1,8 +1,11 @@
-import { execSync } from 'node:child_process';
-import fs from "node:fs/promises";
-import {join, resolve} from 'node:path';
-import { fileURLToPath } from 'node:url';
-import pc from 'picocolors';
+import { execSync } from 'node:child_process'
+import fs from "node:fs/promises"
+import { join, resolve} from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { chdir } from 'node:process'
+
+import * as execa from 'execa'
+import c from 'ansis'
 
 import { version } from '../package.json';
 
@@ -15,42 +18,33 @@ const DIR_DIST = resolve(DIR_ROOT, 'dist');
  */
 async function main() {
   // Check before build
-  console.log(pc.cyan(`\n# Check before build`));
-  console.log(pc.green(`> npm run build:types`));
-  execSync('npm run build:types', { stdio: 'inherit' });
+  console.log(c.cyan(`\n# Check before build`))
+  await run('npm', ['run', 'build:types'])
 
   // Build the package
-  console.log(pc.cyan(`\n# Build the package`));
-  console.log(pc.green(`> npm run build`));
-  execSync('npm run build', { stdio: 'inherit' });
+  console.log(c.cyan(`\n# Build the package`))
+  await run('npm', ['run', 'build'])
 
   // Generate the `package.json`, `LICENSE`, `README.md`, `README-zh.md`
-  console.log(pc.cyan(`\n# Generate the files`));
-  await genAssets();
-
-  console.log(pc.cyan('info'), `Output files
-    at ${pc.green(`package.json`)} ${pc.gray(`(${pc.blueBright(pc.underline(resolve(DIR_DIST, 'package.json')))})`)}
-    at ${pc.green(`LICENSE`)} ${pc.gray(`(${pc.blueBright(pc.underline(resolve(DIR_DIST, 'LICENSE')))})`)}
-    at ${pc.green(`README.md`)} ${pc.gray(`(${pc.blueBright(pc.underline(resolve(DIR_DIST, 'README.md')))})`)}
-    at ${pc.green(`README-zh.md`)} ${pc.gray(`(${pc.blueBright(pc.underline(resolve(DIR_DIST, 'README-zh.md')))})`)}
-    `
-  );
+  console.log(c.cyan(`\n# Generate the files`))
+  await genAssets()
 
   // Ready to publish
-  console.log(pc.cyan(`\n# Ready to publish`));
+  console.log(c.cyan(`\n# Ready to publish`))
   // Enter `dist` dir for root
-  console.log(pc.green(`> cd ${DIR_DIST}`));
-  process.chdir(DIR_DIST);
+  console.log(c.green(`> cd ${DIR_DIST}`))
+  chdir(DIR_DIST)
 
   // Publishing the package
-  console.log(pc.cyan(`\n# Publishing the package`));
-  let command = `npm publish -r --access public --registry https://registry.npmjs.org/ --no-git-checks`;
-
-  if (version.includes('beta'))
-    command += ' --tag beta'
-
-  console.log(pc.green(`> ${command}`));
-  execSync(command, { stdio: 'inherit' });
+  console.log(c.cyan(`\n# Publishing the package`))
+  await run('npm', [
+    'publish',
+    '-r',
+    '--access public',
+    '--registry https://registry.npmjs.org/',
+    '--no-git-checks',
+    version.includes('beta') && '--tag beta',
+  ].filter(Boolean))
 }
 
 /**
@@ -63,6 +57,16 @@ async function genAssets() {
   await fs.copyFile(join(DIR_ROOT, 'LICENSE'), join(DIR_DIST, 'LICENSE'));
   await fs.copyFile(join(DIR_ROOT, 'README.md'), join(DIR_DIST, 'README.md'));
   await fs.copyFile(join(DIR_ROOT, 'README-zh.md'), join(DIR_DIST, 'README-zh.md'));
+
+  console.log()
+  console.log(c.bold`${c.green(4)} files output:`)
+  console.log()
+  console.log([
+    c.green.underline(resolve(DIR_DIST, 'package.json')),
+    c.greenBright.underline(resolve(DIR_DIST, 'LICENSE')),
+    c.greenBright.underline(resolve(DIR_DIST, 'README.md')),
+    c.greenBright.underline(resolve(DIR_DIST, 'README-zh.md'))
+  ].join('\n'))
 }
 
 /**
@@ -105,4 +109,20 @@ async function getPackageJson() {
   return packageJSON;
 }
 
-main().catch((err) => console.error(pc.red('error'), err));
+/**
+ * Run command
+ * @param bin
+ * @param args
+ * @param opt
+ */
+async function run(bin, args, opt?) {
+  opt = Object.assign({ logger: true }, opt)
+  if (opt.logger) console.log(c.green(`> ${[bin, ...args].join(' ')}`))
+  try {
+    return await execa.execa(bin, args, { stdio: 'inherit', ...opt })
+  } catch (e) {
+    throw new Error(c.bold(c.red(`Error running ${c.bold([bin, ...args].join(' '))} in ${c.underline(process.cwd)}:`)) + (e.stderr || e.stack || e.message))
+  }
+}
+
+main().catch((err) => console.error(err))

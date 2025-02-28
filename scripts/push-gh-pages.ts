@@ -1,60 +1,72 @@
-import { execSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { resolve } from 'node:path';
-import { config } from 'dotenv';
-import pc from 'picocolors';
+import { execSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
+import { chdir } from 'node:process'
+
+import { config } from 'dotenv'
+import * as execa from 'execa'
+import c from 'ansis'
 
 // ENV
-config();
+config()
 
 // @ts-ignore
-const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url));
-const DIR_DOCS_DIST = resolve(DIR_ROOT, 'docs/.vitepress/dist');
-const GITHUB_TOKEN = process.env['GITHUB_TOKEN'];
+const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url))
+const DIR_DOCS_DIST = resolve(DIR_ROOT, 'docs/.vitepress/dist')
+const GITHUB_TOKEN = process.env['GITHUB_TOKEN']
 
 // Main entry
 async function main() {
   // Build the package
-  console.log(pc.cyan(`\n# Build the package...`));
-  console.log(pc.green(`> npm run docs:build`));
-  execSync('npm run docs:build', { stdio: 'inherit' });
+  console.log(c.cyan(`\n# Build the package...`))
+  await run('npm', ['run', 'docs:build'])
 
-  // Check the dist dir
-  if (!existsSync(DIR_DOCS_DIST)) {
-    throw new Error('The target directory does not exist');
-  }
+  console.log()
+  console.log(c.bold`${c.green(1)} Created:`)
+  console.log()
+  console.log([c.green.underline(DIR_DOCS_DIST)].join('\n'))
+  console.log()
 
-  // Output dir
-  console.log(
-    pc.cyan('info'),
-    `\nOutput at ${pc.gray(`(${
-      pc.blueBright(pc.underline(DIR_DOCS_DIST))
-    })`)
-    }`
-  );
+  // ------
 
   // Ready to pushing
-  console.log(pc.cyan(`\n# Ready to pushing`));
+  console.log(c.cyan(`\n# Ready to pushing`))
 
   // Enter `dist` dir for root
-  console.log(pc.green(`> cd ${DIR_DOCS_DIST}`));
-  process.chdir(DIR_DOCS_DIST);
+  console.log(c.green(`> cd ${DIR_DOCS_DIST}`))
+  chdir(DIR_DOCS_DIST)
 
   // Commit changes to the Git
-  console.log(pc.green(`> git init`));
-  execSync('git init', { stdio: 'inherit' });
-  console.log(pc.green(`> git add -A`));
-  execSync('git add -A', { stdio: 'inherit' });
-  console.log(pc.green(`> git commit -m [messages]`));
-  execSync('git commit -m "docs: release"', { stdio: 'inherit' });
+  await run('git', ['init'])
+  await run('git', ['add', '-A'])
+  await run('git', ['commit', '-m', `"docs(release): deploy"`])
 
   // Push to GitHub
-  console.log(pc.cyan(`\n# Pushing to GitHub`));
-  console.log(pc.green(`> git push -f [repo] [branch]`));
+  console.log(c.cyan(`\n# Pushing to GitHub`))
   // Default branch is `main` or `master`, repo https://[username]:[token]@github.com/[username]/[repo_name].git
-  execSync(`git push -f https://Appleec:${GITHUB_TOKEN}@github.com/Appleec/e-utils.git main:gh-pages`, { stdio: 'inherit' });
+  await run('git', [
+    'push',
+    '-f',
+    `https://Appleec:${GITHUB_TOKEN}@github.com/Appleec/e-utils.git`,
+    'main:gh-pages'
+  ])
 }
 
-main().catch((err) => console.error(pc.red('error'), err));
+/**
+ * Run command
+ * @param bin
+ * @param args
+ * @param opt
+ */
+async function run(bin, args, opt?) {
+  opt = Object.assign({ logger: true }, opt)
+  if (opt.logger) console.log(c.green(`> ${[bin, ...args].join(' ')}`))
+  try {
+    return await execa.execa(bin, args, { stdio: 'inherit', ...opt })
+  } catch (e) {
+    throw new Error(c.bold(c.red(`Error running ${c.bold([bin, ...args].join(' '))} in ${c.underline(process.cwd)}:`)) + (e.stderr || e.stack || e.message))
+  }
+}
+
+main().catch((err) => console.error(err))
 

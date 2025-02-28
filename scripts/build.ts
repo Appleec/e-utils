@@ -1,43 +1,65 @@
-import { execSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { execSync } from 'node:child_process'
+import { existsSync } from 'node:fs'
 import * as fs from 'node:fs/promises'
-import { fileURLToPath } from 'node:url';
-import { resolve } from 'node:path';
-import pc from 'picocolors';
+import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
+
+import * as execa from 'execa'
+import c from 'ansis'
 
 // @ts-ignore
-const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url));
-const DIR_DIST = resolve(DIR_ROOT, 'dist');
-const watch = process.argv.includes('--watch');
+const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url))
+const DIR_DIST = resolve(DIR_ROOT, 'dist')
 
 /**
  * main
  */
 async function main() {
   // Clean
-  console.log('\n# Clean up',);
-  console.log(pc.green(`> rm ${DIR_DIST}`));
-  await cleanDist();
+  console.log(c.cyan('\n# Clean up'))
+  await cleanDist()
 
   // do something...
 
   // Rollup
-  console.log('\n# Rollup',);
-  const command = `npm run build:rollup${watch ? ' -- --watch' : ''}`;
-  console.log(pc.green(`> ${command}`));
-  execSync(command, { stdio: 'inherit' });
+  console.log(c.cyan('\n# Rollup'))
+  await run('rollup', ['-c', 'rollup.config.mjs'])
 
   // do something...
 }
 
 /**
- * Clean dist dir
+ * Clean dist
  */
 async function cleanDist() {
   if (!existsSync(DIR_DIST))
-    return;
+    return
 
-  await fs.rm(DIR_DIST, { recursive: true });
+  await fs.rm(DIR_DIST, { recursive: true })
+
+  console.log()
+  console.log(c.bold`${c.green(1)} Removed:`)
+  console.log()
+  console.log([c.green.underline(DIR_DIST)].join('\n'))
+  console.log()
 }
 
-main().catch((err) => console.error(pc.red('error'), err));
+/**
+ * Run command
+ * @param bin
+ * @param args
+ * @param opt
+ */
+async function run(bin, args, opt?) {
+  opt = Object.assign({ logger: true }, opt)
+  if (opt.logger)
+    console.log(c.green(`> ${[bin, ...args].join(' ')}`))
+
+  try {
+    return await execa.execa(bin, args, { stdio: 'inherit', ...opt })
+  } catch (e) {
+    throw new Error(c.bold(c.red(`Error running ${c.bold([bin, ...args].join(' '))} in ${c.underline(process.cwd)}:`)) + (e.stderr || e.stack || e.message))
+  }
+}
+
+main().catch((err) => console.error(err))
