@@ -16,8 +16,8 @@ tab_width = 4
 
 # Matches the exact files
 [{*.ats,*.cts,*.mts,*.ts}]
-indent_size = 2
-tab_width = 2
+indent_size = 4
+tab_width = 4
 
 [{*.bash,*.sh,*.zsh}]
 indent_size = 2

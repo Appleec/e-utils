@@ -120,6 +120,8 @@ export default defineConfig({
           { text: 'stopBubble', link: '/stopBubble' },
           { text: 'stopDefault', link: '/stopDefault' },
           { text: 'subtract', link: '/subtract' },
+          { text: 'sum', link: '/sum' },
+          { text: 'sumBy', link: '/sumBy' },
           { text: 'throttle', link: '/throttle' },
           { text: 'timestamp', link: '/timestamp' },
           { text: 'toFinite', link: '/toFinite' },

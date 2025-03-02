@@ -10,4 +10,7 @@ export { default as round } from './round';
 export { default as ceil } from './ceil';
 export { default as floor } from './floor';
 
+export { default as sum } from './sum';
+export { default as sumBy } from './sumBy';
+
 

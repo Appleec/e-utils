@@ -11,7 +11,7 @@
         "test:dev": "vitest --config vitest.config.mts",
         "test:coverage": "vitest --coverage --typecheck",
         "build": "tsx scripts/build.ts",
-        "build:rollup": "rollup -c rollup.config.mjs",
+        "build:rollup": "rollup -c rollup.config.*",
         "build:types": "tsc --noEmit",
         "publish": "tsx scripts/publish.ts",
         "release": "tsx scripts/release.ts",
