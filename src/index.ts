@@ -6,11 +6,7 @@
  * @date 2024-08-25 14:36
  */
 
-/**
- * Lang
- *
- * export * as lang from './lang';
- */
+// Lang
 export { default as isNil } from './isNil';
 export { default as isNull } from './isNull';
 export { default as isObject } from './isObject';
@@ -52,8 +48,7 @@ export { default as cloneWith } from './cloneWith';
 export { default as cloneDeep } from './cloneDeep';
 export { default as cloneDeepWith } from './cloneDeepWith';
 
-// string
-// export * as string from './string';
+// String
 export { default as trim } from './trim';
 export { default as toUpper } from './toUpper';
 export { default as toUpperFirst } from './toUpperFirst';
@@ -68,14 +63,18 @@ export { default as trimEnd } from './trimEnd';
 export { default as startsWith } from './startsWith';
 export { default as endsWith } from './endsWith';
 
-// object
+// Object
 export { default as get } from './get';
 export { default as at } from './at';
 export { default as has } from './has';
 
-// number
+// Array
+export { default as first } from './first';
+export { default as last } from './last';
 
-// time
+// Number
+
+// Time
 export { default as timestamp } from './timestamp';
 export { default as parseTime } from './parseTime';
 export { default as formatTime } from './formatTime';
