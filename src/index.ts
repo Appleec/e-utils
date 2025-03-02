@@ -110,6 +110,8 @@ export { default as ceil } from './ceil';
 export { default as floor } from './floor';
 export { default as sum } from './sum';
 export { default as sumBy } from './sumBy';
+export { default as maxBy } from './maxBy';
+export { default as minBy } from './minBy';
 
 // Util
 export { default as noop } from './noop';

@@ -108,6 +108,8 @@ export default defineConfig({
           { text: 'isURL', link: '/isURL' },
           { text: 'kebabCase', link: '/kebabCase' },
           { text: 'keyCodes', link: '/keyCodes' },
+          { text: 'maxBy', link: '/maxBy' },
+          { text: 'minBy', link: '/minBy' },
           // { text: 'parseTime', link: '/parseTime' },
           { text: 'parseInt', link: '/parseInt' },
           { text: 'pascalCase', link: '/pascalCase' },
