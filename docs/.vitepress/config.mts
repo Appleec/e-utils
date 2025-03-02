@@ -60,6 +60,8 @@ export default defineConfig({
           { text: 'byteSize', link: '/byteSize' },
           { text: 'camelCase', link: '/camelCase' },
           { text: 'ceil', link: '/ceil' },
+          { text: 'chunk', link: '/chunk' },
+          { text: 'compact', link: '/compact' },
           { text: 'convertToUnit', link: '/convertToUnit' },
           { text: 'currentTime', link: '/currentTime' },
           { text: 'debounce', link: '/debounce' },

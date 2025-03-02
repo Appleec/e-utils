@@ -5,7 +5,7 @@
  * [`Array#slice`](https://mdn.io/Array/slice) to ensure dense arrays are
  * returned.
  *
- * @since 3.0.0
+ * @since 0.4.0
  * @category Array
  * @param {Array} array The array to slice.
  * @param {number} [start=0] The start position. A negative index will be treated as an offset from the end.
