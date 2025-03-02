@@ -26,25 +26,24 @@ async function main() {
   await run('npm', ['run', 'build'])
 
   // Generate the `package.json`, `LICENSE`, `README.md`, `README-zh.md`
-  console.log(c.cyan(`\n# Generate the files`))
+  console.log(c.cyan(`\n# Generate the assets`))
   await genAssets()
-
-  // Ready to publish
-  console.log(c.cyan(`\n# Ready to publish`))
-  // Enter `dist` dir for root
-  console.log(c.green(`> cd ${DIR_DIST}`))
-  chdir(DIR_DIST)
 
   // Publishing the package
   console.log(c.cyan(`\n# Publishing the package`))
+  // Enter `dist` dir for root
+  // console.log(c.green(`> cd ${DIR_DIST}`))
+  // chdir(DIR_DIST)
+
   await run('npm', [
     'publish',
     '-r',
     '--access public',
     '--registry https://registry.npmjs.org/',
+    '--ignore-scripts',
     '--no-git-checks',
     version.includes('beta') && '--tag beta',
-  ].filter(Boolean))
+  ].filter(Boolean), { cwd: DIR_DIST })
 }
 
 /**

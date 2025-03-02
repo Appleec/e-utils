@@ -18,25 +18,26 @@ async function main() {
   // Print last commits
   await getLastCommits()
 
-  // Prompt to update version
-  console.log(c.cyan(`\n# Select version`))
+  // Updating the package version
+  console.log(c.cyan(`\n# Updating the package version`))
   await promptForNewVersion()
 
-  // Check and update
-  console.log(c.cyan(`\n# Check adn update`))
+  // Build and check the package
+  console.log(c.cyan(`\n# Checking the package`))
   await run('npm', ['run', 'build:types'])
 
-  // Commit changes to the Git
-  console.log(c.cyan(`\n# Commit changes to the Git`))
+  // Generate the changelog
+
+  // Commit changes to the Git and create a tag
+  console.log(c.cyan(`\n# Committing changes`))
   await getFileChanges()  // Local files change
   await run('git', ['add', '.'])
-  const version = getCurrentVersion()
-  await run('git', ['commit', '-m', `"chore: release v${version}"`])
-  await run('git', ['tag', `-a v${version}`, `-m "v${version}"`])
+  const targetVersion = getCurrentVersion()
+  await run('git', ['commit', '-m', `"chore(release): release v${targetVersion}"`])
+  await run('git', ['tag', `-a v${targetVersion}`, `-m "v${targetVersion}"`])
 
   // Merge changes into master branch
-  console.log(c.cyan(`\n# Merge changes`))
-
+  console.log(c.cyan(`\n# Merging changes`))
   const { stdout: brString } = await run('git', [
     'for-each-ref',
     '--format=%(refname:short)',
@@ -63,8 +64,10 @@ async function main() {
   await run('git', ['merge', '--ff-only', branch])
   await run('git', ['checkout', '-'])
 
-  // Pushing to repo
-  console.log(c.cyan(`\n# Pushing`))
+  // Publish the package
+
+  // Push to repo
+  console.log(c.cyan(`\n# Pushing to repo`))
   const { yes: isOk } = await prompts({
     type: 'confirm',
     name: 'yes',
@@ -74,6 +77,7 @@ async function main() {
   if (!isOk)
     return
 
+  await run('git', ['push', 'origin', `refs/tags/v${targetVersion}`])
   await run('git', ['push', 'origin', 'master:master'])
 }
 

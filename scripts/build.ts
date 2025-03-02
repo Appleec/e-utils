@@ -23,7 +23,7 @@ async function main() {
 
   // Rollup
   console.log(c.cyan('\n# Rollup'))
-  await run('rollup', ['-c', 'rollup.config.mjs'])
+  await run('npm', ['run', 'build:rollup'])
 
   // do something...
 }
