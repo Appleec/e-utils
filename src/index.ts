@@ -67,6 +67,7 @@ export { default as endsWith } from './endsWith';
 export { default as get } from './get';
 export { default as at } from './at';
 export { default as has } from './has';
+export { default as hasIn } from './hasIn';
 
 // Array
 export { default as first } from './first';
