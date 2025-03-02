@@ -20,7 +20,11 @@ async function main() {
 
   // Updating the package version
   console.log(c.cyan(`\n# Updating the package version`))
-  await promptForNewVersion()
+  const currentVersion = await getCurrentVersion()
+  const targetVersion = await getNewVersion(currentVersion)
+
+  if (currentVersion !== targetVersion) updatePackage(targetVersion)
+  else exit(1)
 
   // Build and check the package
   console.log(c.cyan(`\n# Checking the package`))
@@ -32,9 +36,14 @@ async function main() {
   console.log(c.cyan(`\n# Committing changes`))
   await getFileChanges()  // Local files change
   await run('git', ['add', '.'])
-  const targetVersion = getCurrentVersion()
-  await run('git', ['commit', '-m', `"chore(release): release v${targetVersion}"`])
-  await run('git', ['tag', `-a v${targetVersion}`, `-m "v${targetVersion}"`])
+  await run('git', ['commit', '-m', `chore(release): release v${targetVersion}`])
+  await run('git', [
+    'tag',
+    '-a',
+    `v${targetVersion}`,
+    '-m',
+    `v${targetVersion}`,
+  ])
 
   // Merge changes into master branch
   console.log(c.cyan(`\n# Merging changes`))
@@ -59,7 +68,7 @@ async function main() {
   if (bIdx === 0) return
 
   // merge to master
-  const branch = brList[bIdx]
+  const branch = brList[bIdx - 1]
   await run('git', ['checkout', 'master'])
   await run('git', ['merge', '--ff-only', branch])
   await run('git', ['checkout', '-'])
@@ -81,9 +90,28 @@ async function main() {
   await run('git', ['push', 'origin', 'master:master'])
 }
 
-async function promptForNewVersion() {
+/**
+ * Get new version
+ */
+async function getNewVersion(currentVersion) {
+  const newVersion = await promptForNewVersion(currentVersion)
+
+  return newVersion
+}
+
+/**
+ * Get current version
+ */
+async function getCurrentVersion() {
   // @ts-ignore
   const { version: currentVersion } = createRequire(DIR_ROOT)('./package.json')
+
+  return currentVersion
+}
+
+async function promptForNewVersion(currentVersion) {
+  // @ts-ignore
+  // const { version: currentVersion } = createRequire(DIR_ROOT)('./package.json')
   const next = getNextVersions(currentVersion)
 
   const PADDING = 13
@@ -124,26 +152,17 @@ async function promptForNewVersion() {
   if (!newVersion)
     exit(1)
 
-  if (newVersion === currentVersion)
-    exit(1)
+  // if (newVersion === currentVersion)
+  //   exit(1)
 
   switch (answers.release) {
     case 'custom':
     case 'next':
     case 'none':
-      updatePackage(newVersion)
-      break
+      return newVersion
     default:
-      updatePackage(newVersion)
-      break
+      return newVersion
   }
-}
-
-function getCurrentVersion() {
-  // @ts-ignore
-  const { version: currentVersion } = createRequire(DIR_ROOT)('./package.json')
-
-  return currentVersion
 }
 
 /**
@@ -187,6 +206,7 @@ async function getFileChanges() {
   console.log(c.bold`${c.green(fList.length)} Files change:`)
   console.log()
   console.log(fList.join('\n'))
+  console.log()
 }
 
 /**
