@@ -1,45 +1,34 @@
-import { execSync } from 'node:child_process'
 import fs from "node:fs/promises"
 import { join, resolve} from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { chdir } from 'node:process'
 
-import * as execa from 'execa'
-import c from 'ansis'
-
+import { DIR_ROOT, DIR_DIST, run, printStep, printAssets } from './utils'
 import { version } from '../package.json';
-
-// @ts-ignore
-const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url));
-const DIR_DIST = resolve(DIR_ROOT, 'dist');
 
 /**
  * main
  */
 async function main() {
   // Check before build
-  console.log(c.cyan(`\n# Check before build`))
+  printStep('Check before build')
   await run('npm', ['run', 'build:types'])
 
   // Build the package
-  console.log(c.cyan(`\n# Build the package`))
+  printStep('Building the package')
   await run('npm', ['run', 'build'])
 
   // Generate the `package.json`, `LICENSE`, `README.md`, `README-zh.md`
-  console.log(c.cyan(`\n# Generate the assets`))
+  printStep('Generate the assets')
   await genAssets()
 
   // Publishing the package
-  console.log(c.cyan(`\n# Publishing the package`))
-  // Enter `dist` dir for root
-  // console.log(c.green(`> cd ${DIR_DIST}`))
-  // chdir(DIR_DIST)
-
+  printStep('Publishing the package')
   await run('npm', [
     'publish',
     '-r',
-    '--access public',
-    '--registry https://registry.npmjs.org/',
+    '--access',
+    'public',
+    '--registry',
+    'https://registry.npmjs.org/',
     '--ignore-scripts',
     '--no-git-checks',
     version.includes('beta') && '--tag beta',
@@ -57,15 +46,12 @@ async function genAssets() {
   await fs.copyFile(join(DIR_ROOT, 'README.md'), join(DIR_DIST, 'README.md'));
   await fs.copyFile(join(DIR_ROOT, 'README-zh.md'), join(DIR_DIST, 'README-zh.md'));
 
-  console.log()
-  console.log(c.bold`${c.green(4)} files output:`)
-  console.log()
-  console.log([
-    c.green.underline(resolve(DIR_DIST, 'package.json')),
-    c.greenBright.underline(resolve(DIR_DIST, 'LICENSE')),
-    c.greenBright.underline(resolve(DIR_DIST, 'README.md')),
-    c.greenBright.underline(resolve(DIR_DIST, 'README-zh.md'))
-  ].join('\n'))
+  printAssets([
+    resolve(DIR_DIST, 'package.json'),
+    resolve(DIR_DIST, 'LICENSE'),
+    resolve(DIR_DIST, 'README.md'),
+    resolve(DIR_DIST, 'README-zh.md'),
+  ], 'files generated')
 }
 
 /**
@@ -106,22 +92,6 @@ async function getPackageJson() {
   delete packageJSON.files;
 
   return packageJSON;
-}
-
-/**
- * Run command
- * @param bin
- * @param args
- * @param opt
- */
-async function run(bin, args, opt?) {
-  opt = Object.assign({ logger: true }, opt)
-  if (opt.logger) console.log(c.green(`> ${[bin, ...args].join(' ')}`))
-  try {
-    return await execa.execa(bin, args, { stdio: 'inherit', ...opt })
-  } catch (e) {
-    throw new Error(c.bold(c.red(`Error running ${c.bold([bin, ...args].join(' '))} in ${c.underline(process.cwd)}:`)) + (e.stderr || e.stack || e.message))
-  }
 }
 
 main().catch((err) => console.error(err))

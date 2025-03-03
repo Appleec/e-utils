@@ -6,6 +6,7 @@ scripts/*
 !scripts/release.ts
 !scripts/build.ts
 !scripts/publish.ts
+!scripts/utils.ts
 package
 
 # Tools & Text Editors

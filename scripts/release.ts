@@ -1,25 +1,21 @@
-import { execSync } from 'node:child_process'
 import { createRequire } from 'node:module'
 import { readFileSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import { join, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { exit, cwd } from 'node:process'
 
-import * as execa from 'execa'
 import prompts from 'prompts'
 import c from 'ansis'
 import semver, { clean as cleanVersion, valid as isValidVersion, SemVer } from 'semver'
 
-// @ts-ignore
-const DIR_ROOT = fileURLToPath(new URL('..', import.meta.url))
+import { DIR_ROOT, run, printStep, printAssets, printCommits } from './utils'
 
 async function main() {
   // Print last commits
   await getLastCommits()
 
   // Updating the package version
-  console.log(c.cyan(`\n# Updating the package version`))
+  printStep('Updating the package version')
   const currentVersion = await getCurrentVersion()
   const targetVersion = await getNewVersion(currentVersion)
 
@@ -27,13 +23,13 @@ async function main() {
   else exit(1)
 
   // Build and check the package
-  console.log(c.cyan(`\n# Checking the package`))
+  printStep('Checking the package')
   await run('npm', ['run', 'build:types'])
 
   // Generate the changelog
 
   // Commit changes to the Git and create a tag
-  console.log(c.cyan(`\n# Committing changes`))
+  printStep('Committing changes')
   await getFileChanges()  // Local files change
   await run('git', ['add', '.'])
   await run('git', ['commit', '-m', `chore(release): release v${targetVersion}`])
@@ -46,7 +42,7 @@ async function main() {
   ])
 
   // Merge changes into master branch
-  console.log(c.cyan(`\n# Merging changes`))
+  printStep('Merging changes')
   const { stdout: brString } = await run('git', [
     'for-each-ref',
     '--format=%(refname:short)',
@@ -76,7 +72,7 @@ async function main() {
   // Publish the package
 
   // Push to repo
-  console.log(c.cyan(`\n# Pushing to repo`))
+  printStep('Pushing to repo')
   const { yes: isOk } = await prompts({
     type: 'confirm',
     name: 'yes',
@@ -193,20 +189,7 @@ async function getFileChanges() {
     .split(/\r?\n/)
     .map(f => c.green.underline(f))
 
-  if (!fList.length) {
-    console.log()
-    console.log()
-    console.log(c.blue`i` + c.gray` No files change`)
-    console.log()
-
-    return
-  }
-
-  console.log()
-  console.log(c.bold`${c.green(fList.length)} Files change:`)
-  console.log()
-  console.log(fList.join('\n'))
-  console.log()
+  printAssets(fList)
 }
 
 /**
@@ -233,19 +216,7 @@ async function getLastCommits() {
       return [c.dim(shortHash), '   ', c.green(message)].join('')
     })
 
-  if (!logList.length) {
-    console.log()
-    console.log()
-    console.log(c.blue`i` + c.gray` No commits since the last version`)
-    console.log()
-
-    return
-  }
-
-  console.log()
-  console.log(c.bold`${c.green(logList.length)} Commits since the last version:`)
-  console.log()
-  console.log(logList.join('\n'))
+  printCommits(logList)
 }
 
 /**
@@ -278,22 +249,6 @@ function updatePackage(version) {
   pkg.version = version
 
   fs.writeFile(resolve(DIR_ROOT, 'package.json'), JSON.stringify(pkg, null, 4) + '\n')
-}
-
-/**
- * Run command
- * @param bin
- * @param args
- * @param opt
- */
-async function run(bin, args, opt?) {
-  opt = Object.assign({ logger: true }, opt)
-  if (opt.logger) console.log(c.green(`> ${[bin, ...args].join(' ')}`))
-  try {
-    return await execa.execa(bin, args, { stdio: 'inherit', ...opt })
-  } catch (e) {
-    throw new Error(c.bold(c.red(`Error running ${c.bold([bin, ...args].join(' '))} in ${c.underline(process.cwd)}:`)) + (e.stderr || e.stack || e.message))
-  }
 }
 
 main().catch((err) => console.error(err))
