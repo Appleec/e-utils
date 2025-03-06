@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { exit, cwd } from 'node:process'
+import { fileURLToPath } from 'node:url'
 
 import prompts from 'prompts'
 import c from 'ansis'
@@ -100,7 +101,7 @@ async function getNewVersion(currentVersion) {
  */
 async function getCurrentVersion() {
   // @ts-ignore
-  const { version: currentVersion } = createRequire(DIR_ROOT)('./package.json')
+  const { version: currentVersion } = createRequire(join(DIR_ROOT, '/'))('./package.json')
 
   return currentVersion
 }
