@@ -88,6 +88,7 @@ export default defineConfig({
                     {text: 'hasIn', link: '/hasIn'},
                     {text: 'hasPath', link: '/hasPath'},
                     {text: 'indexOf', link: '/indexOf'},
+                    {text: 'inRange', link: '/inRange'},
                     {text: 'isArguments', link: '/isArguments'},
                     {text: 'isArray', link: '/isArray'},
                     {text: 'isArrayLike', link: '/isArrayLike'},
