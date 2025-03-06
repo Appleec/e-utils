@@ -1,5 +1,13 @@
-# Git ignore
-# https://git-scm.com/docs/gitignore
+# [Gitignore](https://git-scm.com/docs/gitignore)
+.git
+.npm
+.yarn
+package-lock.json
+.stylelintcache
+.eslintcache
+.changeset
+.env
+
 backup
 scripts/*
 !scripts/push-gh-pages.ts
@@ -9,51 +17,35 @@ scripts/*
 !scripts/utils.ts
 package
 
-# Tools & Text Editors
+# Tools & Editors
 .idea
 .sublime-*
 .vscode
+.husky
 
-# Dependency directories
+# Dependencies
 node_modules/
 
 # Logs
 logs
 *.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-
-# Build / generate output
+# Build & output
 cdn
 dist
-out
-coverage
 *.tgz
 
-# Temporary files
-.tmp
-.temp
-.grunt
-.lock-wscript
-
-# Docs config
-.chiller
+# Docs
 docs/.vitepress/cache
 docs/.vitepress/dist
 
-# Others
-.git
+# Tests
+coverage
+
+# System files
 .DS_Store
 .DS_STORE
 .cache
-.npm
-.yarn
-.stylelintcache
-.eslintcache
-package-lock.json
-.changeset
-.env
+.tmp
+.temp
 
