@@ -47,6 +47,10 @@ export { default as clone } from './clone';
 export { default as cloneWith } from './cloneWith';
 export { default as cloneDeep } from './cloneDeep';
 export { default as cloneDeepWith } from './cloneDeepWith';
+export { default as gt } from './gt';
+export { default as gte } from './gte';
+export { default as lt } from './lt';
+export { default as lte } from './lte';
 
 // String
 export { default as trim } from './trim';
@@ -68,6 +72,8 @@ export { default as get } from './get';
 export { default as at } from './at';
 export { default as has } from './has';
 export { default as hasIn } from './hasIn';
+export { default as findKey } from './findKey';
+export { default as hasPath } from './hasPath';
 
 // Array
 export { default as first } from './first';
@@ -76,8 +82,13 @@ export { default as slice } from './slice';
 export { default as chunk } from './chunk';
 export { default as compact } from './compact';
 export { default as filter } from './filter';
+export { default as indexOf } from './indexOf';
+
+// Collection
+export { default as each } from './each';
 
 // Number
+export { default as inRange } from './inRange';
 
 // Time
 export { default as timestamp } from './timestamp';

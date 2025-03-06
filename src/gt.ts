@@ -27,4 +27,9 @@ function gt(value, other) {
     return value > other;
 }
 
+// console.log('=>', 300.charCodeAt(0))
+// console.log('=>', 'a'.charCodeAt(0))
+// console.log('=>', gt(300, [2, 1]))
+// console.log('=>', gt('ab', 'a'))
+
 export default gt;
