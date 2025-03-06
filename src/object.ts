@@ -6,3 +6,5 @@ export { default as hasIn } from './hasIn';
 
 export { default as get } from './get';
 export { default as at } from './at';
+
+export { default as findKey } from './findKey';

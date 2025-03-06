@@ -72,6 +72,7 @@ export default defineConfig({
                     {text: 'endsWith', link: '/endsWith'},
                     {text: 'eq', link: '/eq'},
                     {text: 'filter', link: '/filter'},
+                    {text: 'findKey', link: '/findKey'},
                     {text: 'first', link: '/first'},
                     {text: 'floor', link: '/floor'},
                     {text: 'formatTime', link: '/formatTime'},

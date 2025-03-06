@@ -15,24 +15,32 @@ hero:
       link: /getting-started
 
 features:
+  - title: Number
+    link: /number
+    details: 数字方法集合.
+  - title: String
+    link: /string
+    details: 字符串方法集合.
+  - title: Array
+    link: /array
+    details: 数组方法集合.
+  - title: Object
+    link: /object
+    details: 对象方法集合.
+  - title: Function
+    link: /function
+    details: 函数方法集合.
+  - title: Dom
+    link: /dom
+    details: DOM方法集合.
+  - title: Time
+    link: /time
+    details: 时间方法集合.
   - title: Lang
     link: /lang
     details: 任意方法集合.
-  - title: Number
-    details: 数字方法集合.
-  - title: String
-    details: 字符串方法集合.
-  - title: Array
-    details: 数组方法集合.
-  - title: Object
-    details: 对象方法集合.
-  - title: Function
-    details: 函数方法集合.
-  - title: Dom
-    details: DOM方法集合.
-  - title: Time
-    details: 时间方法集合.
   - title: Util
+    link: /util
     details: 其它（包括第三方）方法集合.
 ---
 
