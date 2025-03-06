@@ -1,9 +1,6 @@
 /**
- * @author appleex
- * @date 2024-08-25 14:36
+ * Lang
  */
-
-// lang
 export { default as isNil } from './isNil';
 export { default as isNull } from './isNull';
 export { default as isObject } from './isObject';
@@ -17,3 +14,9 @@ export { default as isFunction } from './isFunction';
 export { default as isArray } from './isArray';
 export { default as isArrayLike } from './isArrayLike';
 export { default as isDate } from './isDate';
+export { default as isRegExp } from './isRegExp';
+
+export { default as gt } from './gt';
+export { default as gte } from './gte';
+export { default as lt } from './lt';
+export { default as lte } from './lte';
