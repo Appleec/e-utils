@@ -1,6 +1,6 @@
 // @ts-nocheck
-import arrayLikeKeys from './arrayLikeKeys.js';
-import isArrayLike from './../isArrayLike.js';
+import arrayLikeKeys from './_internal/arrayLikeKeys';
+import isArrayLike from './isArrayLike';
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -9,7 +9,7 @@ import isArrayLike from './../isArrayLike.js';
  * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
  * for more details.
  *
- * @since 0.1.0
+ * @since 0.4.12
  * @category Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names.

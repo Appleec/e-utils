@@ -19,7 +19,7 @@ import initCloneObject from './initCloneObject.js'
 import isBuffer from '../isBuffer.js'
 import isObject from '../isObject.js'
 import isTypedArray from '../isTypedArray.js'
-import keys from './keys.js'
+import keys from '../keys'
 import keysIn from './keysIn.js'
 
 /** Used to compose bitmasks for cloning. */

@@ -123,6 +123,7 @@ export default defineConfig({
                     {text: 'isURL', link: '/isURL'},
                     {text: 'kebabCase', link: '/kebabCase'},
                     {text: 'keyCodes', link: '/keyCodes'},
+                    {text: 'keys', link: '/keys'},
                     {text: 'last', link: '/last'},
                     {text: 'lt', link: '/lt'},
                     {text: 'lte', link: '/lte'},

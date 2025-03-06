@@ -9,3 +9,4 @@ export { default as at } from './at';
 export { default as hasPath } from './hasPath';
 
 export { default as findKey } from './findKey';
+export { default as keys } from './keys';
