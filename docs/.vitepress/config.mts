@@ -68,6 +68,7 @@ export default defineConfig({
                     {text: 'debounce', link: '/debounce'},
                     {text: 'divide', link: '/divide'},
                     {text: 'downloadFile', link: '/downloadFile'},
+                    {text: 'each', link: '/each'},
                     {text: 'endsWith', link: '/endsWith'},
                     {text: 'eq', link: '/eq'},
                     {text: 'filter', link: '/filter'},
